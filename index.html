@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atabak Mehrabani</title>
+<meta name="description" content="Atabak Mehrabani: personal projects and ventures from the last year.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=IBM+Plex+Mono:wght@400;500&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f1f3f6; --glow1:#ffd9c2; --glow2:#c9d8ff; --paper:#ffffff; --ink:#14161b; --muted:#5f6573; --rule:#dde1e8;
+  --accent:#e0531f; --live:#16a34a; --build:#d97706; --research:#6366f1;
+  --shadow:0 1px 2px rgba(20,22,27,.06),0 12px 32px -18px rgba(20,22,27,.35);
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0c0e13;--glow1:#3a1d10;--glow2:#14214a;--paper:#151821;--ink:#eceef3;--muted:#8e95a5;--rule:#252a36;
+    --accent:#ff7a45;--live:#4ade80;--build:#fbbf24;--research:#a5b4fc;
+    --shadow:0 1px 2px rgba(0,0,0,.5),0 12px 32px -18px rgba(0,0,0,.9)}
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{color:var(--ink);font:16px/1.6 "Inter Tight",system-ui,sans-serif;min-height:100vh;
+  background:radial-gradient(900px 600px at 85% -10%,var(--glow1),transparent 60%),
+             radial-gradient(800px 600px at -10% 30%,var(--glow2),transparent 60%),var(--bg);
+  background-attachment:fixed}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.mono{font-family:"IBM Plex Mono",monospace;font-size:.75rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+
+nav{position:sticky;top:0;z-index:5;backdrop-filter:blur(10px);background:color-mix(in srgb,var(--bg) 70%,transparent);border-bottom:1px solid var(--rule)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
+nav .logo{font-family:Fraunces,serif;font-weight:800;font-size:1.15rem;text-decoration:none}
+nav .logo span{color:var(--accent)}
+nav ul{display:flex;gap:22px;list-style:none}
+nav ul a{text-decoration:none} nav ul a:hover{color:var(--accent)}
+
+header.hero{padding:96px 0 40px}
+.hero h1{font-family:Fraunces,serif;font-weight:800;font-size:clamp(2.8rem,8vw,5.6rem);line-height:.95;letter-spacing:-.025em;margin-top:14px}
+.hero .lede{max-width:560px;margin-top:22px;font-size:1.12rem;color:var(--muted)}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.stats a{display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 12px;border:1px solid var(--rule);border-radius:999px;background:color-mix(in srgb,var(--paper) 75%,transparent);text-decoration:none;font-size:.92rem;transition:border-color .2s}
+.stats a:hover{border-color:var(--ink)}
+.stats b{font-family:Fraunces,serif;font-size:1.1rem}
+.stats i{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.stats .lv i{background:var(--live);box-shadow:0 0 0 4px color-mix(in srgb,var(--live) 22%,transparent)}
+
+.uses{margin-top:40px;padding-top:18px;border-top:1px solid var(--rule)}
+.uses ul{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;font:.68rem/1 "IBM Plex Mono",monospace;color:var(--muted)}
+.uses li{white-space:nowrap;padding:5px 8px;border-radius:6px;background:color-mix(in srgb,var(--paper) 60%,transparent);border:1px solid var(--rule)}
+
+section{padding:48px 0}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+.sec-head h2{font-family:Fraunces,serif;font-size:clamp(1.6rem,4vw,2.2rem);font-weight:600}
+
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:16px}
+@media (max-width:480px){.tiles{grid-template-columns:repeat(2,1fr);gap:12px}}
+.tile{appearance:none;border:1px solid var(--rule);background:var(--paper);border-radius:18px;padding:14px;cursor:pointer;text-align:left;color:inherit;font:inherit;box-shadow:var(--shadow);transition:transform .2s,border-color .2s}
+.tile:hover,.tile:focus-visible{transform:translateY(-4px);border-color:var(--ink);outline:none}
+.tile .art{aspect-ratio:1;border-radius:12px;display:grid;place-items:center;background:var(--c)}
+.tile .art svg{width:52%;height:52%}
+.tile .nm{display:block;margin-top:12px;font-weight:600;line-height:1.25}
+.tile .st{margin-top:4px}
+.status{display:inline-flex;align-items:center;gap:6px;font:500 .68rem "IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.05em}
+.status::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.status.live{color:var(--live)} .status.building{color:var(--build)} .status.research,.status.concept{color:var(--research)} .status.active{color:var(--accent)}
+
+dialog{margin:auto;border:1px solid var(--rule);border-radius:20px;background:var(--paper);color:var(--ink);width:min(620px,calc(100% - 32px));max-height:calc(100% - 48px);padding:0;box-shadow:0 30px 80px -20px rgba(0,0,0,.5)}
+dialog::backdrop{background:rgba(8,10,14,.55);backdrop-filter:blur(4px)}
+dialog[open]{animation:pop .22s ease-out}
+@keyframes pop{from{opacity:0;transform:translateY(12px) scale(.98)}}
+.dl{padding:28px}
+.dl-head{display:flex;gap:18px;align-items:center}
+.dl-head .art{flex:none;width:76px;height:76px;border-radius:16px;display:grid;place-items:center;background:var(--c)}
+.dl-head .art svg{width:56%;height:56%}
+.dl h3{font-family:Fraunces,serif;font-size:1.6rem;font-weight:600;line-height:1.1}
+.dl .tag{color:var(--accent);font-weight:500;margin-top:4px}
+.dl p.desc{margin-top:20px;color:var(--muted)}
+.dl ul.pts{list-style:none;display:grid;gap:6px;margin-top:16px;font-size:.95rem}
+.dl ul.pts li::before{content:"→ ";color:var(--accent);font-family:"IBM Plex Mono",monospace}
+.stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:20px}
+.stack span{font:.72rem "IBM Plex Mono",monospace;padding:3px 9px;border:1px solid var(--rule);border-radius:999px;color:var(--muted)}
+.links{display:flex;gap:16px;margin-top:20px;font:500 .82rem "IBM Plex Mono",monospace}
+.links a{text-decoration:none;border-bottom:1px solid var(--accent)}
+.close{position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:50%;border:1px solid var(--rule);background:var(--paper);color:var(--ink);cursor:pointer;font-size:1.1rem}
+.close:hover{border-color:var(--ink)}
+
+.about{display:grid;grid-template-columns:1.3fr 1fr;gap:40px}
+@media (max-width:800px){.about{grid-template-columns:1fr}}
+.about p{margin-bottom:14px;color:var(--muted)}
+.skills{display:grid;gap:12px}
+.skills div{background:var(--paper);border:1px solid var(--rule);border-radius:12px;padding:14px 16px}
+.skills div p{margin:4px 0 0;font-size:.93rem}
+
+footer{border-top:1px solid var(--rule);padding:40px 0 60px;margin-top:32px}
+footer h2{font-family:Fraunces,serif;font-size:clamp(1.8rem,5vw,2.6rem);font-weight:600}
+footer .contact{display:flex;gap:22px;flex-wrap:wrap;margin-top:16px;font:500 .9rem "IBM Plex Mono",monospace}
+footer .contact a{text-decoration:none;border-bottom:1px solid var(--accent)}
+footer .fine{margin-top:36px}
+@media (max-width:600px){nav ul{gap:14px} nav ul li.hide-sm{display:none} header.hero{padding:60px 0 32px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a href="#" class="logo">Atabak<span>.</span></a>
+  <ul class="mono">
+    <li><a href="#work">Projects</a></li>
+    <li><a href="#ventures">Ventures</a></li>
+    <li class="hide-sm"><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <p class="mono">Saskatchewan, Canada</p>
+  <h1>Atabak Mehrabani</h1>
+  <p class="lede">The software, tools and ventures I have been working on over the last year, in one place.</p>
+  <div class="stats" id="stats"></div>
+  <div class="uses"><p class="mono">Used across these projects</p><ul id="uses"></ul></div>
+</div></header>
+
+<section id="work"><div class="wrap">
+  <div class="sec-head"><h2>Projects</h2><span class="mono">Tap a project for details</span></div>
+  <div class="tiles" id="project-tiles"></div>
+</div></section>
+
+<section id="ventures"><div class="wrap">
+  <div class="sec-head"><h2>Ventures</h2></div>
+  <div class="tiles" id="venture-tiles"></div>
+</div></section>
+
+<section id="about"><div class="wrap">
+  <div class="sec-head"><h2>About</h2></div>
+  <div class="about">
+    <div>
+      <p>I'm based in Saskatchewan, Canada, with a background in biomedical engineering.</p>
+      <p>Some of these projects are tools I built for my own use. Others are businesses I am testing or running. I keep this page updated as they change.</p>
+    </div>
+    <div class="skills">
+      <div><span class="mono">Engineering</span><p>Biomechanics, simulation, SolidWorks, AutoCAD, MATLAB, OpenSim</p></div>
+      <div><span class="mono">Software &amp; AI</span><p>Python, TypeScript, React, Next.js, FastAPI, PyTorch, computer vision, LLM agents</p></div>
+      <div><span class="mono">Business</span><p>Process optimization, project management, market research</p></div>
+    </div>
+  </div>
+</div></section>
+
+<footer id="contact"><div class="wrap">
+  <p class="mono">Contact</p>
+  <h2 style="margin-top:8px">Get in touch</h2>
+  <div class="contact">
+    <a href="https://github.com/atmi97">GitHub ↗</a>
+    <!-- TODO: add LinkedIn and a public email before publishing -->
+  </div>
+  <p class="mono fine">© <span id="yr"></span> Atabak Mehrabani</p>
+</div></footer>
+
+<dialog id="detail" aria-labelledby="dl-title"><button class="close" aria-label="Close">×</button><div class="dl" id="dl-body"></div></dialog>
+
+<script>
+/* Logos: 24×24 white line icons drawn on each project's colour. */
+const S = 'fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"';
+const ICON = {
+  compass:`<circle cx="12" cy="12" r="9"/><path d="M12 5.5l2.6 6.5L12 18.5 9.4 12z" fill="#fff"/>`,
+  ball:`<circle cx="12" cy="12" r="5.5"/><path d="M6.5 12h11M12 6.5v11M8.1 8.1c2 2 2 5.8 0 7.8M15.9 8.1c-2 2-2 5.8 0 7.8"/><path d="M20.5 12a8.5 8.5 0 1 1-2.5-6" stroke-dasharray="2 2.4"/>`,
+  posture:`<circle cx="12" cy="4.5" r="1.8"/><path d="M12 7.5c-1 2.5-1 5 0 7.5s1 4 0 6.5M8 10.5h8M9 21h6"/>`,
+  film:`<rect x="3.5" y="5" width="17" height="14" rx="2"/><path d="M3.5 9h17M3.5 15h17M8 5v4M12 5v4M16 5v4M8 15v4M12 15v4M16 15v4"/>`,
+  play:`<rect x="3" y="4.5" width="18" height="12.5" rx="2"/><path d="M10.2 8v5l4.3-2.5z" fill="#fff"/><path d="M8 20.5h8"/>`,
+  rise:`<path d="M4 20V14M9 20v-8M14 20V9M19 20V5"/><path d="M4 9l5-4 4 2.5L19 3"/>`,
+  drop:`<path d="M12 3.5c3.5 4.4 6 7.8 6 10.9a6 6 0 0 1-12 0c0-3.1 2.5-6.5 6-10.9z"/><path d="M9.3 14.6a2.8 2.8 0 0 0 2.7 2.6"/>`,
+  wrench:`<path d="M14.5 6.5a4 4 0 0 0 5 5L12 19a2.1 2.1 0 0 1-3-3l7.5-7.5a4 4 0 0 1-2-2z"/><path d="M4 8V4h4M4 4l5 5"/>`,
+  store:`<path d="M4 9.5V20h16V9.5M3 9.5l1.8-5h14.4l1.8 5zM3 9.5c0 1.5 1.3 2.5 3 2.5s3-1 3-2.5c0 1.5 1.3 2.5 3 2.5s3-1 3-2.5c0 1.5 1.3 2.5 3 2.5s3-1 3-2.5"/><path d="M10 20v-4.5h4V20"/>`,
+  link:`<path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/>`,
+  home:`<path d="M3.5 11 12 4l8.5 7M5.5 9.5V20h13V9.5"/><path d="M12 17.5s-3-1.8-3-3.8a1.6 1.6 0 0 1 3-.8 1.6 1.6 0 0 1 3 .8c0 2-3 3.8-3 3.8z" fill="#fff"/>`,
+};
+
+/* Edit these lists to add, remove or update entries. status: live | building | research | active | concept */
+const PROJECTS = [
+  {name:"Northscout", icon:"compass", color:"#0f766e", status:"building", tag:"Deal screening for buying a Canadian small business",
+   desc:"Aggregates business-for-sale listings from Canadian marketplaces into one dataset, scores every deal 0 to 100 on quality and separately on how trustworthy its numbers are, then runs a Canada-specific underwriting workbench.",
+   pts:["CSBFP, BDC and vendor take-back financing built in","1.25× DSCR floor that Canadian lenders actually apply","Telegram alerts on new and changed listings"],
+   stack:["TypeScript","Next.js","Vitest","Web scraping","Deal scoring","Telegram alerts","Bank of Canada FX"]},
+  {name:"WNBA Cycle Intelligence", icon:"ball", color:"#ea580c", status:"live", tag:"WNBA player prop predictions",
+   desc:"Tracks WNBA player performance against inferred ~28 day cycle patterns to forecast player prop outcomes (over, under or pass) with probability scores. Includes a news agent and a paper trading record.",
+   pts:["157 players and 600+ predictions from 2024 to 2025 data","Automated data refresh and news intelligence","Live in production"],
+   stack:["Python","FastAPI","SQLite","pandas","scikit-learn","React","Tailwind CSS","Recharts","Railway","Vercel","News agent"], links:[["Live app","https://wnba-teal.vercel.app"]]},
+  {name:"ErgoAssist", icon:"posture", color:"#2563eb", status:"research", tag:"Real-time posture coaching from a webcam",
+   desc:"Uses pose estimation to measure joint angles live, warns when posture stays in a risky range too long, and logs sessions to an analytics dashboard. A software first step toward a wearable posture system.",
+   stack:["Python","OpenCV","MediaPipe","Pose estimation","SQLite","Audio alerts"]},
+  {name:"AI UGC Content Bank", icon:"film", color:"#c026d3", status:"building", tag:"Breaks down short-form videos into storyboards",
+   desc:"Paste a short-form video link into Discord and a bot breaks it down shot by shot, writes generation prompts for each frame and files everything into a Google Sheets content bank.",
+   stack:["Python","Discord bot","Gemini","Groq","Google Sheets API","Google Drive API","Docker","Hugging Face Spaces"]},
+  {name:"Xtream Player", icon:"play", color:"#dc2626", status:"live", tag:"Desktop media player for Windows",
+   desc:"A Windows desktop player for personal IPTV subscriptions with live TV, movies, series, EPG and a resilient playback engine. Credentials are kept in Windows Credential Manager, never on disk.",
+   stack:["Tauri 2","Rust","React","mpv","FFmpeg","Windows Credential Manager"]},
+  {name:"Daily 1% Tracker", icon:"rise", color:"#16a34a", status:"live", tag:"Daily habit and score tracker",
+   desc:"A local-first app that scores ten daily categories, tracks streaks and rank progression, and sends morning coaching directives through Telegram.",
+   stack:["Node.js","Express","Vanilla JS","JSON storage","Telegram bot"]},
+  {name:"Rinse It", icon:"drop", color:"#0284c7", status:"research", tag:"A self-washing face mask",
+   desc:"A hardware concept for hands-free face rinsing. Completed market research, buyer personas and competitor analysis across a beauty device market projected to grow from $34B to $108B by 2034.",
+   stack:["Hardware MVP","Market research","Buyer personas"]},
+];
+
+const VENTURES = [
+  {name:"Trade Revenue Recovery", icon:"wrench", color:"#b45309", status:"active", tag:"Recovering lost revenue for home service contractors",
+   desc:"Helping plumbing, HVAC, electrical and roofing contractors in Saskatoon recover money they already earned: missed calls, slow quotes, rejected permits and dormant customer lists. Each engagement starts with a Leak Report, then the fix.",
+   stack:["AI automation","Leak Reports"], links:[["Code","https://github.com/atmi97/local-business-automation"]]},
+  {name:"Business Acquisition", icon:"store", color:"#334155", status:"active", tag:"Buying an established Canadian small business",
+   desc:"Searching for an established Canadian business to buy and operate. Northscout is the tool I built to screen deals for it.",
+   stack:["Deal underwriting","CSBFP and BDC financing"]},
+  {name:"Affiliate Content Engine", icon:"link", color:"#7c3aed", status:"building", tag:"AI-run product and SaaS reviews",
+   desc:"A content system that produces and distributes product and SaaS reviews for remote workers and solo creators, with under 20 minutes a day of human time.",
+   stack:["Claude Code","SEO","Content automation","Affiliate networks"]},
+  {name:"Care Next Door", icon:"home", color:"#e11d48", status:"concept", tag:"Elderly care, close to home",
+   desc:"A platform connecting families with trusted elderly care nearby.",
+   stack:["Web platform"]},
+];
+
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const art = (p, cls="art") => `<span class="${cls}" style="--c:${p.color}"><svg viewBox="0 0 24 24" ${S} aria-hidden="true">${ICON[p.icon]}</svg></span>`;
+
+/** Render a clickable logo tile. */
+function tile(p, list, i){
+  return `<button class="tile" data-list="${list}" data-i="${i}" aria-haspopup="dialog">${art(p)}
+    <span class="nm">${esc(p.name)}</span><span class="st status ${p.status}">${p.status}</span></button>`;
+}
+
+/** Fill and open the details dialog for one entry. */
+function openDetail(p){
+  const pts = p.pts ? `<ul class="pts">${p.pts.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>` : "";
+  const links = p.links ? `<div class="links">${p.links.map(([t,u])=>`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)} ↗</a>`).join("")}</div>` : "";
+  document.getElementById("dl-body").innerHTML = `<div class="dl-head">${art(p)}<div>
+      <span class="status ${p.status}">${p.status}</span><h3 id="dl-title">${esc(p.name)}</h3><div class="tag">${esc(p.tag)}</div></div></div>
+    <p class="desc">${esc(p.desc)}</p>${pts}<div class="stack">${p.stack.map(s=>`<span>${esc(s)}</span>`).join("")}</div>${links}`;
+  dlg.showModal();
+}
+
+/** Render the summary pills and the combined list of everything used. */
+function renderSummary(){
+  const all = [...PROJECTS, ...VENTURES];
+  const live = all.filter(p=>p.status==="live" || p.status==="active").length;
+  document.getElementById("stats").innerHTML =
+    `<a href="#work"><i></i><b>${PROJECTS.length}</b> projects</a>` +
+    `<a href="#ventures"><i></i><b>${VENTURES.length}</b> ventures</a>` +
+    `<a href="#work" class="lv"><i></i><b>${live}</b> live or active</a>`;
+  const uses = [...new Set(all.flatMap(p=>p.stack))].sort((a,b)=>a.localeCompare(b));
+  document.getElementById("uses").innerHTML = uses.map(u=>`<li>${esc(u)}</li>`).join("");
+}
+
+const dlg = document.getElementById("detail");
+const LISTS = {projects:PROJECTS, ventures:VENTURES};
+document.getElementById("project-tiles").innerHTML = PROJECTS.map((p,i)=>tile(p,"projects",i)).join("");
+document.getElementById("venture-tiles").innerHTML = VENTURES.map((p,i)=>tile(p,"ventures",i)).join("");
+document.addEventListener("click", e=>{
+  const t = e.target.closest(".tile");
+  if (t) openDetail(LISTS[t.dataset.list][t.dataset.i]);
+});
+dlg.querySelector(".close").addEventListener("click", ()=>dlg.close());
+dlg.addEventListener("click", e=>{ if (e.target === dlg) dlg.close(); });
+renderSummary();
+document.getElementById("yr").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
