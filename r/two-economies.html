@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Tale of Two Economies · Atabak Mehrabani</title>
+<meta name="description" content="How much of US stock market value and recent growth comes from AI-linked companies and data center spending, and how the rest of the economy is doing.">
+<link rel="stylesheet" href="style.css">
+<script src="kit.js"></script>
+</head>
+<body>
+<div class="deck">
+  <div class="topbar"><div class="in"><a href="../research.html">← Atabak<span>.</span> Research</a><button class="theme">Dark</button></div></div>
+  <div class="stage">
+    <section class="slide title">
+      <p class="mono">Slides · October 2026</p>
+      <h2>A Tale of Two Economies</h2>
+      <p>A few AI-linked companies carry a large share of US stock value and investment growth. Consumers, housing and hiring tell a weaker story.</p>
+      <p class="mono">Use ← → keys or swipe</p>
+    </section>
+
+    <section class="slide">
+      <p class="mono">01 · Market value</p>
+      <div class="big">35%</div>
+      <h3>Share of the S&amp;P 500 held by seven tech companies: Nvidia, Apple, Microsoft, Amazon, Alphabet, Meta and Tesla [1]</h3>
+      <div id="share" style="margin-top:24px"></div>
+    </section>
+
+    <section class="slide">
+      <p class="mono">02 · Market value</p>
+      <h2>The ten largest weights</h2>
+      <p>Percent of the S&amp;P 500, 19 October 2026. Alphabet's two share classes are combined [1].</p>
+      <div id="weights" style="margin-top:12px"></div>
+    </section>
+
+    <section class="slide">
+      <p class="mono">03 · Returns</p>
+      <h2>Most of the gains came from AI names</h2>
+      <ul>
+        <li>From ChatGPT's launch in Nov 2022 to Sep 2025, AI-related stocks delivered 75% of S&amp;P 500 returns and 80% of its earnings growth [2].</li>
+        <li>Seven AI-oriented stocks produced over half of the index's total gain in 2025 [2].</li>
+        <li>Nvidia alone is now about 7.5% of the index [1].</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <p class="mono">04 · Spending</p>
+      <h2>The building boom</h2>
+      <ul>
+        <li>Alphabet raised its 2026 capital spending plan to $195-205 billion, from $180-190 billion [3].</li>
+        <li>Meta's 2026 plan is $125-145 billion, up from $115-135 billion [4].</li>
+        <li>Reported combined 2026 plans for Amazon, Microsoft, Alphabet and Meta top $700 billion. This is a press tally, not company guidance [4].</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <p class="mono">05 · GDP</p>
+      <h2>AI investment held up 2025 growth</h2>
+      <p>Real GDP growth vs the contribution from AI-related investment (equipment, software, R&amp;D, data centers), annualized percentage points [5].</p>
+      <div id="stl" style="margin-top:12px"></div>
+      <p style="font-size:.9rem">Over the first nine months of 2025 these categories made up 39% of growth, vs 28% in 2000 at the dot-com peak [5].</p>
+    </section>
+
+    <section class="slide">
+      <p class="mono">06 · GDP, 2026</p>
+      <h2>A third to a half of growth, by definition</h2>
+      <p>ING's estimates of tech investment's share of year-over-year GDP growth, Q2 2026 [6].</p>
+      <div id="ing" style="margin-top:12px"></div>
+      <p style="font-size:.9rem">ING says even its narrowest measure likely overstates the AI part, since old and new tech spending are hard to separate [6].</p>
+    </section>
+
+    <section class="slide">
+      <p class="mono">07 · The import catch</p>
+      <h2>Much of the hardware is imported</h2>
+      <p>Contribution to Q2 2026 year-over-year growth (2.1%), percentage points [7].</p>
+      <div id="imports" style="margin-top:12px"></div>
+      <p style="font-size:.9rem">Hardware imports rose from 0.5% to 1.6% of GDP since 2024 [7].</p>
+    </section>
+
+    <section class="slide">
+      <p class="mono">08 · Other investment</p>
+      <h2>Tech crowds out the rest</h2>
+      <ul>
+        <li>Real tech investment is up 62% since Q1 2022 [6].</li>
+        <li>Business investment outside tech fell year over year for six straight quarters, Q4 2024 to Q1 2026 [6].</li>
+        <li>Tech imports tripled in two years to about $60 billion a month [6].</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <p class="mono">09 · Consumers</p>
+      <h2>Spending, but not feeling good</h2>
+      <ul>
+        <li>Michigan consumer sentiment fell to 46.3 in early October, from 48.1. One-year inflation expectations rose to 4.7% [8].</li>
+        <li>Households save 2.7% of disposable income, vs a 5.2% average over 2000-2019 [7].</li>
+        <li>ING estimates stock-market wealth adds about 0.44 points to GDP through spending, led by high-income households [6].</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <p class="mono">10 · Housing</p>
+      <h2>Housing is stuck</h2>
+      <div class="stats">
+        <div><b>3.99M</b><span>Existing-home sales, Sep 2026, annual rate, down 2.2% on a year [9]</span></div>
+        <div><b>$417,500</b><span>Median price, up 1.3% on a year [9]</span></div>
+        <div><b>6.86%</b><span>30-year mortgage rate in September [9]</span></div>
+        <div><b>31%</b><span>First-time buyers' share of sales [9]</span></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <p class="mono">11 · Jobs</p>
+      <h2>Hiring has nearly stalled</h2>
+      <p>September 2026 job change by sector, thousands. Total: +29,000. Unemployment: 4.2%. July was revised to a loss of 10,000 [10].</p>
+      <div id="jobs" style="margin-top:12px"></div>
+      <p style="font-size:.9rem">ING notes entry-level graduate hiring is down 17% since 2019 [6].</p>
+    </section>
+
+    <section class="slide">
+      <p class="mono">12 · The link</p>
+      <h2>Why the two economies are tied</h2>
+      <ul>
+        <li>Q2 2026 GDP grew 2.2%. BEA's upward revision to structures was led by data centers [11].</li>
+        <li>Consumer spending still adds more to growth than AI hardware and software, before imports: 1.53 vs 0.70 points [7].</li>
+        <li>The main risk: a fall in AI stock prices cuts wealth, then spending by the households doing most of it [7].</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Sources</h2>
+      <ol style="margin-left:22px">
+        <li style="font-size:.8rem;margin-top:4px">Slickcharts, S&amp;P 500 component weights, accessed 19 Oct 2026. <a href="https://www.slickcharts.com/sp500">slickcharts.com/sp500</a></li>
+        <li style="font-size:.8rem;margin-top:4px">EconoFact, "Have AI-related companies driven stock gains since the launch of ChatGPT?", 22 Mar 2026, citing J.P. Morgan Eye on the Market (Sep 2025) and RBC Wealth Management. <a href="https://econofact.org/factbrief/fact-check-have-ai-related-companies-driven-stock-gains-since-the-launch-of-chatgpt">econofact.org</a></li>
+        <li style="font-size:.8rem;margin-top:4px">W.Media, "AI infrastructure demand pushes Alphabet's 2026 capex guidance to US$205 billion", 23 Jul 2026. <a href="https://w.media/ai-infrastructure-demand-pushes-alphabets-2026-capex-guidance-to-us-205-billion/">w.media</a></li>
+        <li style="font-size:.8rem;margin-top:4px">Yahoo Finance, "Hyperscalers hit $700 billion in 2026 AI spending plans", 1 May 2026. <a href="https://finance.yahoo.com/sectors/technology/articles/hyperscalers-hit-700-billion-2026-111243744.html">finance.yahoo.com</a></li>
+        <li style="font-size:.8rem;margin-top:4px">Federal Reserve Bank of St. Louis, "Tracking AI's Contribution to GDP Growth", Jan 2026. <a href="https://www.stlouisfed.org/on-the-economy/2026/jan/tracking-ai-contribution-gdp-growth">stlouisfed.org</a></li>
+        <li style="font-size:.8rem;margin-top:4px">ING (J. Knightley), "How much is AI contributing to US economic growth?", 20 Aug 2026. <a href="https://think.ing.com/opinions/how-much-is-ai-contributing-to-us-economic-growth/">think.ing.com</a></li>
+        <li style="font-size:.8rem;margin-top:4px">Flossbach von Storch Research Institute (P. Duarte), "How much does US growth depend on AI investment?", 24 Aug 2026. <a href="https://www.flossbachvonstorch-researchinstitute.com/en/all/detail/how-much-does-us-growth-depend-on-ai-investment">flossbachvonstorch-researchinstitute.com</a></li>
+        <li style="font-size:.8rem;margin-top:4px">investingLive, "US October UMich prelim consumer sentiment 46.3 vs 47.8 expected", 9 Oct 2026. <a href="https://investinglive.com/news/us-october-umich-prelim-consumer-sentiment-vs-47-8-expected/">investinglive.com</a></li>
+        <li style="font-size:.8rem;margin-top:4px">National Association of Realtors, existing-home sales for September, 13 Oct 2026. <a href="https://www.nar.realtor/newsroom/existing-home-sales-increased-1-5-in-september-according-to-nar-report">nar.realtor</a></li>
+        <li style="font-size:.8rem;margin-top:4px">U.S. Bureau of Labor Statistics, "The Employment Situation, September 2026", 2 Oct 2026. <a href="https://www.bls.gov/news.release/archives/empsit_10022026.htm">bls.gov</a></li>
+        <li style="font-size:.8rem;margin-top:4px">U.S. Bureau of Economic Analysis, "GDP (Third Estimate), 2nd Quarter 2026", 30 Sep 2026. <a href="https://bea.gov/news/2026/gdp-third-estimate-industries-corporate-profits-state-gdp-and-state-personal-income-2nd">bea.gov</a></li>
+      </ol>
+    </section>
+  </div>
+  <div class="bar"><button class="prev" aria-label="Previous">←</button><div class="progress"><i></i></div><span class="mono count"></span><button class="next" aria-label="Next">→</button></div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", ()=>{
+  Kit.strip("#share", [
+    {label:"Seven largest tech companies", value:34.95},
+    {label:"Other 493 companies", value:65.05, color:"var(--s7)"}
+  ], {suffix:"%", title:"S&P 500 weight split"});
+
+  Kit.bars("#weights", [
+    {label:"Nvidia", value:7.48},
+    {label:"Apple", value:7.15},
+    {label:"Alphabet", value:5.97},
+    {label:"Microsoft", value:5.66},
+    {label:"Amazon", value:4.04},
+    {label:"Meta", value:2.57},
+    {label:"Broadcom", value:2.28},
+    {label:"Tesla", value:2.08},
+    {label:"Berkshire Hathaway", value:1.63, color:"var(--s7)"},
+    {label:"Eli Lilly", value:1.58, color:"var(--s7)"}
+  ], {suffix:"%", dp:2, title:"Largest S&P 500 weights"});
+
+  Kit.line("#stl", [
+    {name:"Real GDP growth", points:[["Q1 2025",-0.6],["Q2 2025",3.8],["Q3 2025",4.3]], color:"var(--s7)"},
+    {name:"AI-related investment", points:[["Q1 2025",1.30],["Q2 2025",1.16],["Q3 2025",0.48]]}
+  ], {suffix:" pp", dp:2, title:"AI investment contribution to GDP growth, 2025"});
+
+  Kit.bars("#ing", [
+    {label:"Broad: all IT, software, data centers", value:50.2},
+    {label:"Strict: computers and software", value:44},
+    {label:"Strict, minus net imports", value:36}
+  ], {suffix:"%", sort:false, labelW:250, title:"Tech share of Q2 2026 GDP growth"});
+
+  Kit.bars("#imports", [
+    {label:"Consumer spending", value:1.53, color:"var(--s7)"},
+    {label:"AI hardware + software, gross", value:0.70},
+    {label:"AI hardware + software, net of imports", value:0.14}
+  ], {suffix:" pp", dp:2, sort:false, labelW:260, title:"Growth contributions, Q2 2026"});
+
+  Kit.bars("#jobs", [
+    {label:"Health care", value:17},
+    {label:"Construction", value:11},
+    {label:"Manufacturing", value:9},
+    {label:"Transport and warehousing", value:7.6},
+    {label:"Retail", value:5.8},
+    {label:"Financial activities", value:-7},
+    {label:"Professional and business", value:-9},
+    {label:"Information", value:-10},
+    {label:"Government", value:-17}
+  ], {suffix:"k", sort:false, labelW:200, title:"September 2026 job change by sector"});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How AI Is Measured · Atabak Mehrabani</title>
+<meta name="description" content="What benchmark questions look like, who leads the main leaderboards in October 2026, what testing costs, and why one score rarely tells the whole story.">
+<link rel="stylesheet" href="style.css">
+<script src="kit.js"></script>
+</head>
+<body>
+<div class="deck">
+  <div class="topbar"><div class="in"><a href="../research.html">← Atabak<span>.</span> Research</a><button class="theme">Dark</button></div></div>
+  <div class="stage">
+    <section class="slide title">
+      <p class="mono">Slides · October 2026</p>
+      <h2>How AI Is Measured</h2>
+      <p>A benchmark is a fixed set of questions with an automatic grader. This deck shows what the questions look like, who leads today, what testing costs, and where the scores break.</p>
+      <p class="mono">Use ← → keys or swipe</p>
+    </section>
+
+    <section class="slide">
+      <p class="mono">01 · Example item</p>
+      <h2>An expert trivia question</h2>
+      <p>Humanity's Last Exam has 2,500 questions across more than 100 subjects, written by nearly 1,000 experts at 500+ institutions [1]. Two of its public samples, paraphrased:</p>
+      <ul>
+        <li>Classics: here is a Roman tombstone inscription in Palmyrene script, with a transliteration. Translate it.</li>
+        <li>Ecology: given a photo of a hummingbird bone, how many paired tendons does this sesamoid bone support?</li>
+      </ul>
+      <p>Answers are short or multiple choice, so a script can grade them.</p>
+    </section>
+
+    <section class="slide">
+      <p class="mono">02 · Example item</p>
+      <h2>A real bug report</h2>
+      <ul>
+        <li>SWE-bench gives the model a GitHub issue from a popular open-source Python project, plus the code at that point in time [2].</li>
+        <li>The model must write a patch. Hidden tests from the real fix decide pass or fail.</li>
+        <li>The "Verified" subset is 500 tasks that humans checked for clear wording and fair tests [2].</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <p class="mono">03 · Example item</p>
+      <h2>A colour-grid puzzle</h2>
+      <ul>
+        <li>ARC-AGI shows a few pairs of small coloured grids: an input and the output it turns into.</li>
+        <li>The model must infer the rule (for example, "fill every enclosed shape with the colour of its border") and draw the output for a new input.</li>
+        <li>ARC Prize reports a human panel solving 100% of ARC-AGI-2 tasks at about $17 per task [3].</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <p class="mono">04 · The map</p>
+      <h2>The benchmarks people cite</h2>
+      <div class="tablewrap"><table class="t">
+        <tr><th>Benchmark</th><th>What it tests</th><th>How it is graded</th></tr>
+        <tr><td>SWE-bench Verified</td><td>Fixing real code bugs</td><td>Hidden unit tests</td></tr>
+        <tr><td>GPQA Diamond</td><td>Graduate science, "Google-proof"</td><td>Multiple choice</td></tr>
+        <tr><td>Humanity's Last Exam</td><td>Frontier expert knowledge</td><td>Exact answer</td></tr>
+        <tr><td>ARC-AGI-2 / 3</td><td>Learning a new rule from few examples</td><td>Exact grid match</td></tr>
+        <tr><td>FrontierMath</td><td>Research-level maths</td><td>Checkable final answer</td></tr>
+        <tr><td>LMArena</td><td>Which answer people prefer</td><td>Blind pairwise human votes</td></tr>
+        <tr><td>METR time horizon</td><td>Length of task an agent can finish</td><td>Task success vs human time</td></tr>
+      </table></div>
+    </section>
+
+    <section class="slide">
+      <p class="mono">05 · Who leads</p>
+      <h2>Leaders, October 2026</h2>
+      <div class="tablewrap"><table class="t">
+        <tr><th>Benchmark</th><th>Top result</th><th>Score</th></tr>
+        <tr><td>ARC-AGI-2</td><td>GPT-6 Astra (Max)</td><td>95.0%, $1.12/task [3]</td></tr>
+        <tr><td>ARC-AGI-3</td><td>GPT-6 Astra (Max)</td><td>62.7% [3]</td></tr>
+        <tr><td>GPQA Diamond</td><td>Gemini 4 Argon (high)</td><td>96.4% [5]</td></tr>
+        <tr><td>Humanity's Last Exam</td><td>GPT-6 Astra</td><td>54.8% [5][6]</td></tr>
+        <tr><td>FrontierMath tiers 1-3</td><td>GPT-6.1 Sol and GPT-6 Astra (max)</td><td>93.7% [5]</td></tr>
+        <tr><td>SWE-bench Verified</td><td>Claude Opus 4.7 (Epoch's own run)</td><td>83.5% [5]</td></tr>
+        <tr><td>METR time horizon</td><td>Claude Mythos Preview</td><td>~17 h at 50% [7]</td></tr>
+      </table></div>
+      <p style="font-size:.9rem">LMArena changes weekly and I could not verify a current snapshot, so it is left out.</p>
+    </section>
+
+    <section class="slide">
+      <p class="mono">06 · Saturation</p>
+      <h2>GPQA went from hard to solved in three years</h2>
+      <p>Best score on GPQA Diamond by model release date, vs PhD experts in the original study [4][5].</p>
+      <div id="gpqa" style="margin-top:16px"></div>
+    </section>
+
+    <section class="slide">
+      <p class="mono">07 · Speed</p>
+      <h2>ARC-AGI-2 fell in under a year</h2>
+      <p>Best verified ARC-AGI-2 score, by model release date [3].</p>
+      <div id="arc" style="margin-top:16px"></div>
+    </section>
+
+    <section class="slide">
+      <p class="mono">08 · Agents</p>
+      <h2>Task length doubles about every four months</h2>
+      <p>Length of task (in human working hours) a model finishes half the time. METR's fitted doubling time since 2023 is about 129 days [7].</p>
+      <div id="metr" style="margin-top:12px"></div>
+      <p style="font-size:.9rem">METR says results above 16 hours are unreliable with its current task suite [7].</p>
+    </section>
+
+    <section class="slide">
+      <p class="mono">09 · Cost</p>
+      <h2>Similar scores, ten times the bill</h2>
+      <p>Cost of one full SWE-bench Verified run (500 tasks, same simple agent), with score [2].</p>
+      <div id="cost" style="margin-top:12px"></div>
+      <ul>
+        <li>The HAL agent leaderboard spent about $40,000 on 21,730 runs across 9 models and 9 benchmarks [11].</li>
+        <li>One task in Artificial Analysis's index averages $1.73 for GPT-6 Astra (high) [12].</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <p class="mono">10 · Limit</p>
+      <h2>Contamination and bad answer keys</h2>
+      <ul>
+        <li>In February 2026 OpenAI stopped reporting SWE-bench Verified. Models could reproduce original fixes from memory, and at least 59.4% of audited failures had tests that rejected correct code [8].</li>
+        <li>FutureHouse estimated 29% of HLE's text-only chemistry and biology answers conflict with published research. The HLE team's own review put it near 18% [9].</li>
+        <li>Once a test is public, it ends up in training data.</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <p class="mono">11 · Limit</p>
+      <h2>Gaming the leaderboard</h2>
+      <ul>
+        <li>Meta tested 27 private variants on Chatbot Arena before Llama 4 and could publish only the best [10].</li>
+        <li>Google and OpenAI each received about 20% of all Arena data. 83 open-weight models shared about 30% [10].</li>
+        <li>HAL caught agents searching HuggingFace for the benchmark instead of solving the task [11].</li>
+        <li>As METR's suite saturates, results swing with analysis choices. One fix cut recent horizons by up to 20% [13].</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <p class="mono">12 · Reading scores</p>
+      <h2>Why one number misleads</h2>
+      <ul>
+        <li>Same model, different bar: Claude Mythos Preview has a 17-hour horizon at 50% success, but 3 hours at 80% [7].</li>
+        <li>Same model, different harness: Claude 4.5 Opus scores 79.2% on SWE-bench Verified inside one agent and 76.8% inside a basic one [2].</li>
+        <li>Same score, different cost: 75.8% cost $37 for one model and $178 for another [2].</li>
+        <li>Confidence matters: GPT-6 Astra's HLE calibration error is 39 points, so its stated confidence often misses its real accuracy [6].</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Sources</h2>
+      <ol style="margin-left:22px">
+        <li style="font-size:.8rem;margin-top:4px">CAIS and Scale AI, "Humanity's Last Exam", 2025. <a href="https://lastexam.ai/">lastexam.ai</a></li>
+        <li style="font-size:.8rem;margin-top:4px">SWE-bench leaderboards and data file, accessed 19 Oct 2026. <a href="https://www.swebench.com/">swebench.com</a>, <a href="https://github.com/SWE-bench/swe-bench.github.io/blob/master/data/leaderboards.json">leaderboards.json</a></li>
+        <li style="font-size:.8rem;margin-top:4px">ARC Prize, leaderboard data, accessed 19 Oct 2026. <a href="https://arcprize.org/leaderboard">arcprize.org/leaderboard</a></li>
+        <li style="font-size:.8rem;margin-top:4px">Rein et al., "GPQA: A Graduate-Level Google-Proof Q&amp;A Benchmark", 2023. <a href="https://arxiv.org/abs/2311.12022">arXiv:2311.12022</a></li>
+        <li style="font-size:.8rem;margin-top:4px">Epoch AI, "Capabilities &amp; benchmarking" data, retrieved Oct 2026 (CC BY). <a href="https://epoch.ai/benchmarks">epoch.ai/benchmarks</a></li>
+        <li style="font-size:.8rem;margin-top:4px">Scale AI Labs, Humanity's Last Exam leaderboard, updated 17 Sep 2026. <a href="https://labs.scale.com/leaderboard/humanitys_last_exam">labs.scale.com</a></li>
+        <li style="font-size:.8rem;margin-top:4px">METR, "Time horizons", updated 8 Sep 2026, and results file v1.1. <a href="https://metr.org/time-horizons/">metr.org/time-horizons</a></li>
+        <li style="font-size:.8rem;margin-top:4px">OpenAI, "Why we no longer evaluate SWE-bench Verified", Feb 2026, as reported by GIGAZINE, 29 Apr 2026. <a href="https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified/">openai.com</a>, <a href="https://gigazine.net/gsc_news/en/20260429-swe-bench-verified">gigazine.net</a></li>
+        <li style="font-size:.8rem;margin-top:4px">FutureHouse, HLE chemistry and biology review, Jul 2025, updated Sep 2025. <a href="https://futurehouse.org/research/hle-exam">futurehouse.org</a></li>
+        <li style="font-size:.8rem;margin-top:4px">Singh et al., "The Leaderboard Illusion", 2025. <a href="https://arxiv.org/abs/2504.20879">arXiv:2504.20879</a></li>
+        <li style="font-size:.8rem;margin-top:4px">Kapoor et al., "Holistic Agent Leaderboard", ICLR 2026. <a href="https://arxiv.org/abs/2510.11977">arXiv:2510.11977</a></li>
+        <li style="font-size:.8rem;margin-top:4px">Artificial Analysis, GPT-6 Astra (high) model page, accessed Oct 2026. <a href="https://artificialanalysis.ai/models/gpt-6-astra-high">artificialanalysis.ai</a></li>
+        <li style="font-size:.8rem;margin-top:4px">METR, "Impact of modelling assumptions on time horizon results", 20 Mar 2026. <a href="https://metr.org/notes/2026-03-20-impact-of-modelling-assumptions-on-time-horizon-results/">metr.org</a></li>
+      </ol>
+    </section>
+  </div>
+  <div class="bar"><button class="prev" aria-label="Previous">←</button><div class="progress"><i></i></div><span class="mono count"></span><button class="next" aria-label="Next">→</button></div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", ()=>{
+  const gpqa = [["Mar 23",35.7],["Jun 24",54.0],["Sep 24",62.4],["Dec 24",76.8],["Mar 25",83.8],["Jul 25",87.0],["Nov 25",92.6],["Feb 26",94.4],["Sep 26",96.4]];
+  Kit.line("#gpqa", [
+    {name:"Best model", points:gpqa},
+    {name:"PhD experts (65%)", points:gpqa.map(p=>[p[0],65]), color:"var(--s7)"}
+  ], {suffix:"%", title:"GPQA Diamond best score over time"});
+
+  Kit.line("#arc", [
+    {name:"Best ARC-AGI-2 score", points:[["Nov 25",37.6],["Dec 25",54.2],["Feb 26",84.6],["Apr 26",85.0],["Jun 26",89.2],["Jul 26",92.5],["Sep 26",95.0]]}
+  ], {suffix:"%", title:"ARC-AGI-2 record over time"});
+
+  Kit.bars("#metr", [
+    {label:"GPT-4 (2023)", value:0.07},
+    {label:"o1 (Dec 2024)", value:0.65},
+    {label:"o3 (Apr 2025)", value:2.0},
+    {label:"GPT-5 (Aug 2025)", value:3.4},
+    {label:"Opus 4.5 (Nov 2025)", value:4.9},
+    {label:"Opus 4.6 (Feb 2026)", value:12.0},
+    {label:"Mythos Preview (Apr 2026)", value:17.4, note:"Above METR's 16 h reliability limit"}
+  ], {suffix:" h", sort:false, labelW:190, title:"METR 50% time horizon in hours"});
+
+  Kit.bars("#cost", [
+    {label:"Claude 4.5 Opus (high)", value:377, note:"76.8% resolved"},
+    {label:"Claude 4.6 Opus", value:276, note:"75.6% resolved"},
+    {label:"GPT 5.2 (high)", value:237, note:"72.8% resolved"},
+    {label:"Gemini 3 Flash (high)", value:178, note:"75.8% resolved"},
+    {label:"Kimi K2.5 (high)", value:73, note:"70.8% resolved"},
+    {label:"MiniMax M2.5 (high)", value:37, note:"75.8% resolved"}
+  ], {prefix:"$", labelW:180, title:"Cost of one SWE-bench Verified run"});
+});
+</script>
+</body>
+</html>

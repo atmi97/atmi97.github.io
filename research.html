@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research · Atabak Mehrabani</title>
+<meta name="description" content="Research reports and slide decks by Atabak Mehrabani.">
+<link rel="stylesheet" href="r/style.css">
+<script src="r/kit.js"></script>
+<style>
+.wrap{max-width:820px;margin:0 auto;padding:48px 20px 80px}
+.wrap h1{font-family:Fraunces,serif;font-weight:800;font-size:clamp(2.2rem,6vw,3.4rem);letter-spacing:-.02em}
+.wrap > p{color:var(--muted);margin-top:10px}
+.group{margin-top:36px;background:var(--paper);border:1px solid var(--rule);border-radius:16px;overflow:hidden}
+.group h2{font-family:Fraunces,serif;font-size:1.25rem;font-weight:600;padding:16px 20px;border-bottom:1px solid var(--rule)}
+.group h2 small{font:.72rem "IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-left:8px;font-weight:400}
+.item{display:grid;grid-template-columns:36px 1fr auto;gap:12px;align-items:center;padding:16px 20px;text-decoration:none;border-bottom:1px solid var(--rule);transition:background .15s}
+.item:last-child{border-bottom:0}
+.item:hover{background:var(--soft)}
+.item .n{font:500 .85rem "IBM Plex Mono",monospace;color:var(--muted)}
+.item b{display:block;font-weight:600;font-size:1.05rem}
+.item span{display:block;color:var(--muted);font-size:.92rem;margin-top:2px}
+.item em{font:500 .7rem "IBM Plex Mono",monospace;font-style:normal;text-transform:uppercase;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="in"><a href="index.html">← Atabak<span>.</span></a><button class="theme">Dark</button></div></div>
+<main class="wrap">
+  <h1>Research</h1>
+  <p>Reports and slide decks on markets I follow, and the research behind my own projects.</p>
+  <div id="groups"></div>
+</main>
+<script>
+/* Edit these lists to add or reorder pages. ext:true opens an outside site. */
+const GROUPS = [
+  {title:"Research", items:[
+    ["r/semis.html","The Semiconductor Market","The chip value chain layer by layer: who earns the margin, who buys, and where it is built."],
+    ["r/ai-models.html","The AI Model Market","Model categories, the revenue each brings in, the leaders, and how spending compares to returns."],
+    ["r/datacenters.html","Datacenters and Neoclouds","What goes into an AI datacenter, what a gigawatt costs, and the companies renting out GPUs."],
+    ["r/solo.html","Making $10,000 a Month Without a Job","Paths to $10K a month as one person using AI, sorted by the background you start with."],
+  ]},
+  {title:"Slides", items:[
+    ["r/week-sep27.html","This Week: 27 September 2026","The week's main AI, technology and market stories."],
+    ["r/ai-benchmarks.html","How AI Is Measured","Benchmarks, leaderboards, what they cost to run, and where they mislead."],
+    ["r/two-economies.html","A Tale of Two Economies","AI spending against the rest of the US economy and market."],
+    ["r/week-oct18.html","This Week: 18 October 2026","September inflation and the week's market stories."],
+  ]},
+  {title:"My project research", items:[
+    ["r/rinse-it.html","Rinse It: A Self-Washing Face Mask","Market, competitors, buyers and pricing for a hands-free face rinsing device."],
+    ["r/ugc.html","AI UGC: Can It Reach $10K a Month?","Rates, buyers and the economics of AI-made user-generated content."],
+    ["r/affiliate.html","Affiliate Marketing with AI in 2026","Networks, commissions, low-ticket versus recurring SaaS, and what AI changes."],
+    ["r/acquisition.html","Buying a Small Business in Canada","Targets, valuation, Canadian financing and the debt coverage test."],
+  ]},
+  {title:"My project slides", items:[
+    ["r/rinse-it-deck.html","Rinse It in 12 Slides","The Rinse It research, summarized."],
+    ["r/acquisition-deck.html","Buying a Business in Canada, in 12 Slides","The acquisition research with a worked deal."],
+  ]},
+  {title:"Reading", note:"by Kooshiar, my mentor", ext:true, items:[
+    ["https://kooshiar.com/r/semis","The Semiconductor Market","Kooshiar's interactive report on the chip industry."],
+    ["https://kooshiar.com/r/ai","The AI Model Market","Kooshiar's report on AI model categories and their economics."],
+    ["https://kooshiar.com/r/dc","Datacenters and Neoclouds","Kooshiar's report on datacenter buildout and GPU clouds."],
+    ["https://kooshiar.com/solo","Making $10,000 a Month Without a Job","Kooshiar's guide to solo income with AI."],
+    ["https://kooshiar.com/research","All of Kooshiar's research and slides","His full research page."],
+  ]},
+];
+
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+document.getElementById("groups").innerHTML = GROUPS.map(g => `<div class="group">
+  <h2>${esc(g.title)}${g.note ? `<small>${esc(g.note)}</small>` : ""}</h2>
+  ${g.items.map(([href,t,d],i) => `<a class="item" href="${esc(href)}"${g.ext ? ' target="_blank" rel="noopener"' : ""}>
+    <span class="n">${i+1}</span><div><b>${esc(t)}</b><span>${esc(d)}</span></div>${g.ext ? "<em>kooshiar.com ↗</em>" : ""}</a>`).join("")}
+</div>`).join("");
+</script>
+</body>
+</html>

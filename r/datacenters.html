@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datacenters and Neoclouds · Atabak Mehrabani</title>
+<meta name="description" content="What an AI datacenter is made of, what a gigawatt costs, where capacity is going, and how the GPU-rental neoclouds finance it.">
+<link rel="stylesheet" href="style.css">
+<script src="kit.js"></script>
+</head>
+<body>
+<div class="topbar"><div class="in"><a href="../research.html">← Atabak<span>.</span> Research</a><button class="theme">Dark</button></div></div>
+<main class="report">
+  <h1>Datacenters and Neoclouds</h1>
+  <p class="dek">What an AI datacenter is made of, what a gigawatt costs, where capacity is going, and how the GPU-rental neoclouds pay for it.</p>
+  <p class="mono byline">Atabak Mehrabani · October 2026 · 9 min read</p>
+
+  <section>
+    <span class="mono num">01</span>
+    <h2>Inside the building</h2>
+    <p>An AI datacenter is five systems stacked together: a power chain from the grid connection down to each rack, cooling that removes almost all of that power as heat, the GPU servers, the network that ties them into one cluster, and the shell around it. What changed with AI is density. <strong>One Nvidia GB200 NVL72 rack holds 72 GPUs and draws about 124 kW</strong> [3], while older halls were built for 5 to 10 kW per rack [4]. Past roughly 40 kW per rack, air cooling stops being enough and liquid cooling is required [3].</p>
+    <div class="figure">
+      <div class="head">Power per rack, kW</div>
+      <div id="fig1"><div class="c"></div></div>
+      <p class="note">Sources: SemiAnalysis [3], Uptime Institute survey via mgrid [4], Nvidia [5]. The 1 MW figure is Nvidia's stated target for racks from 2027, not a shipping product.</p>
+    </div>
+    <div class="tablewrap"><table class="t">
+      <tr><th>System</th><th>What it includes</th><th>Share of build cost (Bernstein)</th></tr>
+      <tr><td>Compute</td><td>GPUs and host CPUs</td><td>~39% GPUs, ~3% CPUs</td></tr>
+      <tr><td>Power</td><td>Generators and turbines, transformers, UPS, switchgear</td><td>Close to one third</td></tr>
+      <tr><td>Networking</td><td>Switches, NICs and DPUs, cabling</td><td>~13%</td></tr>
+      <tr><td>Cooling</td><td>Chillers, liquid loops, coolant distribution</td><td>~4%</td></tr>
+      <tr><td>Storage</td><td>Flash and disk</td><td>~1 to 1.5%</td></tr>
+    </table></div>
+    <p class="note">Source: Bernstein estimate reported by Investing.com [2]. Shares are of total capex per GW; the building shell is not broken out.</p>
+  </section>
+
+  <section>
+    <span class="mono num">02</span>
+    <h2>What a gigawatt costs</h2>
+    <p>Estimates for 1 GW of AI capacity run from about $35 billion to $60 billion, depending on who counts and which chips are assumed [1][2]. Epoch AI's model of a GB200 campus puts up-front spending at <strong>$37.9 billion, of which servers are $21.2 billion</strong> [1]. Because servers wear out in about five years and the building lasts fourteen, servers are 60% of the annual cost even though the electricity bill is under $0.6 billion a year [1].</p>
+    <div class="figure">
+      <div class="head">Cost of 1 GW of AI capacity</div>
+      <div id="fig2"><div class="c"></div></div>
+      <p class="note">Sources: Epoch AI [1]; Bernstein and Nvidia via Investing.com [2]. Nvidia's figure is a $50B to $60B range, shown at its midpoint. Epoch assumes a 5-year server life, 8.34 c/kWh power and PUE 1.14.</p>
+    </div>
+  </section>
+
+  <section>
+    <span class="mono num">03</span>
+    <h2>Where it is being built</h2>
+    <p>The United States used about 45% of the world's datacenter electricity in 2024, ahead of China at 25% and Europe at 15% [6]. Inside North America the build is concentrated in a few markets. <strong>Northern Virginia alone has about 4.5 GW of inventory and 0.2% vacancy</strong>, and Atlanta now has the largest construction pipeline at 2.9 GW [8]. Across the main markets, 80% of the space under construction is already leased [8].</p>
+    <div class="figure">
+      <div class="head">Datacenter electricity and capacity by region</div>
+      <div id="fig3"><div class="c"></div></div>
+      <p class="note">Sources: IEA, Energy and AI (2024 data) [6]; CBRE, H1 2026 [8]. "Rest of world" is the remainder of the IEA shares.</p>
+    </div>
+    <div class="stats">
+      <div><b>7,481 MW</b><span>Under construction in primary North American markets, H1 2026 [8]</span></div>
+      <div><b>80.4%</b><span>Of that construction already preleased [8]</span></div>
+      <div><b>1.4%</b><span>Vacancy across primary markets, a record low [8]</span></div>
+    </div>
+  </section>
+
+  <section>
+    <span class="mono num">04</span>
+    <h2>Power is the binding constraint</h2>
+    <p>US datacenters used 176 TWh in 2023, about 4.4% of national electricity, and the Department of Energy projects 6.7% to 12% by 2028 [7]. The strain shows up first in PJM, the grid operator covering Virginia. Its capacity price went from <strong>$28.92 to $333.44 per MW-day in three auctions</strong>, and the latest one still fell 6.6 GW short of its reliability target [9][10]. The IEA estimates about 20% of planned datacenter projects could be delayed by grid limits [6].</p>
+    <div class="figure">
+      <div class="head">PJM capacity auction clearing price, $/MW-day</div>
+      <div id="fig4"><div class="c"></div></div>
+      <p class="note">Sources: S&amp;P Global [10], Utility Dive [9]. The 2027/28 result hit a negotiated cap; Utility Dive reports it would have been close to $530 without it.</p>
+    </div>
+    <div class="stats">
+      <div><b>176 TWh</b><span>US datacenter use, 2023 [7]</span></div>
+      <div><b>325 to 580 TWh</b><span>DOE range for 2028 [7]</span></div>
+      <div><b>945 TWh</b><span>IEA global projection for 2030, from 415 TWh in 2024 [6]</span></div>
+    </div>
+  </section>
+
+  <section>
+    <span class="mono num">05</span>
+    <h2>Hyperscaler capex</h2>
+    <p>Amazon, Alphabet, Microsoft and Meta spent about $413 billion on capex in 2025 and are guiding to roughly $735 to $760 billion for 2026 [11][13]. In the second quarter of 2026 alone the four spent about $172 billion, 77% more than a year earlier [11]. Alphabet raised its range to $195 to $205 billion in July, and Amazon raised to about $220 billion, citing higher memory prices [14][15].</p>
+    <div class="figure">
+      <div class="head">Hyperscaler capital expenditure</div>
+      <div id="fig5"><div class="c"></div></div>
+      <p class="note">Sources: Vanguard [12] (2026 to 2028 are consensus forecasts); Platformonomics [11]; Statista [13], Alphabet and Amazon guidance [14][15]. Microsoft's guidance is calendar 2026; Platformonomics shows $175B after a lease reclassification.</p>
+    </div>
+  </section>
+
+  <section>
+    <span class="mono num">06</span>
+    <h2>The neoclouds</h2>
+    <p>Neoclouds rent GPUs by the hour or, more often now, under multi-year reserved contracts. They sign power and shell leases, buy Nvidia systems with borrowed money, and resell the capacity to AI labs and hyperscalers. <strong>CoreWeave had 1.5 GW active and 3.7 GW contracted</strong> at the end of June [16]. Crusoe reports 1 GW online and more than 6 GW contracted after raising $3.9 billion at a $30.9 billion valuation [21].</p>
+    <div class="figure">
+      <div class="head">Contracted power, GW</div>
+      <div id="fig6"><div class="c"></div></div>
+      <p class="note">Sources: CoreWeave [16], Nebius [18], Crusoe [21]. Nebius's figure is its target for end of 2026. Lambda does not publish a comparable number.</p>
+    </div>
+    <div class="tablewrap"><table class="t">
+      <tr><th>Company</th><th>Latest revenue</th><th>Contracted work</th><th>Funding</th></tr>
+      <tr><td>CoreWeave</td><td>$2.58B in Q2 2026, up from $1.21B [16]</td><td>$104B backlog, plus $25B+ signed early Q3 [16]</td><td>About $35B of debt on the balance sheet [16]</td></tr>
+      <tr><td>Nebius</td><td>$582M in Q2 2026; $3B annual run rate [19]</td><td>Microsoft deal of $17.4B to $19.4B over five years [20]</td><td>2026 capex guide of $20B to $25B [19]</td></tr>
+      <tr><td>Crusoe</td><td>Private</td><td>$140B+ aggregate contracted value [21]</td><td>$3.9B Series F, $30.9B valuation [21]</td></tr>
+      <tr><td>Lambda</td><td>2026 revenue reported on track for $1.5B+ [23]</td><td>Not disclosed</td><td>Reported talks for up to $3B at $12B+ [23]</td></tr>
+    </table></div>
+  </section>
+
+  <section>
+    <span class="mono num">07</span>
+    <h2>Contracts and debt</h2>
+    <p>The business works when a creditworthy customer signs for years of capacity before the GPUs are bought, so lenders can lend against the contract. CoreWeave's OpenAI agreements add up to about $22.4 billion and its Meta agreements to about $35 billion [17][22]. The cost is interest: in Q2 2026 <strong>CoreWeave paid $640 million in net interest on $2.58 billion of revenue</strong>, which turned a small operating loss into a $626 million net loss [16].</p>
+    <div class="figure">
+      <div class="head">Major neocloud contracts and CoreWeave's Q2 2026 income statement</div>
+      <div id="fig7"><div class="c"></div></div>
+      <p class="note">Sources: CoreWeave [16][17], eWeek [22], Nebius via Futuriom [20], Bloomberg via The Edge [24]. Contract values are maximums ("up to"). "Other operating costs" is derived from reported revenue, cost of revenue, D&amp;A and operating loss.</p>
+    </div>
+    <div class="stats">
+      <div><b>$1.39B</b><span>CoreWeave depreciation and amortization in Q2 2026, vs $560M a year earlier [16]</span></div>
+      <div><b>$13.5B</b><span>Net new debt CoreWeave raised in Q2 2026 [16]</span></div>
+      <div><b>$5.7B</b><span>Nebius capex in Q2 2026 [19]</span></div>
+    </div>
+  </section>
+
+  <section>
+    <span class="mono num">08</span>
+    <h2>The price of a GPU-hour</h2>
+    <p>H100 rental prices fell through 2025 as supply caught up, with marketplace rates near $2 an hour and hyperscaler on-demand rates near $6 [25]. Neocloud rates held around $3.30, and in 2026 they turned up: Silicon Data's neocloud H100 index rose 7% from May to July [26]. <strong>Nebius raised its on-demand H100 price from $3.85 to $4.50 an hour</strong> on October 1, its second increase this year [27].</p>
+    <div class="figure">
+      <div class="head">GPU rental prices, $ per GPU-hour</div>
+      <div id="fig8"><div class="c"></div></div>
+      <p class="note">Sources: Silicon Data [25] (period medians; June 2025 is a single month); Nebius list prices via Spheron [27]. List prices are on-demand; reserved contracts are usually lower.</p>
+    </div>
+    <div class="callout">A rough check on the economics, using numbers above: one GPU rented at $4.50 for every hour of a year earns about $39,400. Epoch's model puts server cost per GW at $21.2B up front [1], which is why utilization and contract length matter more than list price.</div>
+  </section>
+
+  <div class="sources">
+    <span class="mono">Sources</span>
+    <ol>
+      <li>Epoch AI, "AI datacenter cost breakdown" (data insight), May 2026. <a href="https://epoch.ai/data-insights/ai-datacenter-cost-breakdown">epoch.ai</a></li>
+      <li>Investing.com, "How much does a GW of data center capacity actually cost" (Bernstein, Nvidia figures), Nov 2025. <a href="https://www.investing.com/news/stock-market-news/how-much-does-a-gw-of-data-center-capacity-actually-cost-4314046">investing.com</a></li>
+      <li>SemiAnalysis, "GB200 Hardware Architecture and Component Supply Chain", Jul 2024. <a href="https://newsletter.semianalysis.com/p/gb200-hardware-architecture-and-component">semianalysis.com</a></li>
+      <li>mgrid, "Global Data Center PUE Stalls at 1.54" (Uptime Institute 2025 survey), Oct 2025. <a href="https://mgrid.org/2025/10/01/uptime-institute-data-center-pue-stagnation-2025-liquid-cooling/">mgrid.org</a></li>
+      <li>Nvidia Technical Blog, "NVIDIA 800 VDC Architecture Will Power the Next Generation of AI Factories", 2025. <a href="https://developer.nvidia.com/blog/nvidia-800-v-hvdc-architecture-will-power-the-next-generation-of-ai-factories/">developer.nvidia.com</a></li>
+      <li>IEA, "Energy and AI: Executive summary", 2025. <a href="https://www.iea.org/reports/energy-and-ai/executive-summary">iea.org</a></li>
+      <li>US Department of Energy, "DOE Releases New Report Evaluating Increase in Electricity Demand from Data Centers" (LBNL), Dec 2024. <a href="https://www.energy.gov/articles/doe-releases-new-report-evaluating-increase-electricity-demand-data-centers">energy.gov</a></li>
+      <li>CBRE, "North American data center demand continues to outpace supply despite record construction", Sep 2026. <a href="https://www.cbre.com/press-releases/north-american-data-center-demand-continues-to-outpace-supply-despite-record-construction">cbre.com</a></li>
+      <li>Utility Dive, PJM 2027/28 capacity auction results, Dec 2025. <a href="https://www.utilitydive.com/news/pjm-interconnection-capacity-auction-data-center/808264/">utilitydive.com</a></li>
+      <li>S&amp;P Global, "PJM capacity auction clears at record price of $269.92/MW-day", 2024. <a href="https://www.spglobal.com/market-intelligence/en/news-insights/articles/2024/8/pjm-capacity-auction-clears-at-record-price-of-269-92-mw-day-across-footprint-82638602">spglobal.com</a></li>
+      <li>Platformonomics, "Follow the CAPEX: Q2 2026 Scoreboard", Jul 2026. <a href="https://platformonomics.com/2026/07/follow-the-capex-q2-2026-scoreboard/">platformonomics.com</a></li>
+      <li>Vanguard, "Hyperscaler capital expenditures (actual and consensus)", 2026. <a href="https://corporate.vanguard.com/etc.clientlibs/corporatesite/clientlibs/clientlib-site/resources/dwcharts/2dC6s-2.htm">vanguard.com</a></li>
+      <li>Statista, hyperscaler capex chart, Jul 31 2026. <a href="https://www.statista.com/chart/35046/">statista.com</a></li>
+      <li>W.Media, "AI infrastructure demand pushes Alphabet's 2026 capex guidance to US$205 billion", Jul 2026. <a href="https://w.media/ai-infrastructure-demand-pushes-alphabets-2026-capex-guidance-to-us-205-billion/">w.media</a></li>
+      <li>TIKR, "Amazon Raised Its 2026 Capex Guide to $220 Billion", Aug 2026. <a href="https://www.tikr.com/blog/amazon-raised-its-2026-capex-guide-to-220-billion-heres-what-drove-the-increase">tikr.com</a></li>
+      <li>CoreWeave, "CoreWeave Reports Strong Second Quarter 2026 Results", Aug 2026. <a href="https://investors.coreweave.com/news/news-details/2026/CoreWeave-Reports-Strong-Second-Quarter-2026-Results/">coreweave.com</a></li>
+      <li>CoreWeave, "CoreWeave Expands Agreement with OpenAI by up to $6.5B", Sep 2025. <a href="https://www.coreweave.com/news/coreweave-expands-agreement-with-openai-by-up-to-6-5b">coreweave.com</a></li>
+      <li>Nebius Group, Q2 2026 shareholder letter (Form 6-K, Ex. 99.2), Aug 2026. <a href="https://www.sec.gov/Archives/edgar/data/0001513845/000110465926094568/tm2622968d1_ex99-2.htm">sec.gov</a></li>
+      <li>Quartr, "Nebius (NBIS) Q2 2026 earnings summary", Aug 2026. <a href="https://quartr.com/events/nebius-group-n-v-nbis-q2-2026_ozKEzQzr">quartr.com</a></li>
+      <li>Futuriom, "Nebius' Monster Microsoft Deal Fuels Further Expansion", Sep 2025. <a href="https://www.futuriom.com/articles/news/nebius-monster-microsoft-deal-fuels-further-expansion/2025/09">futuriom.com</a></li>
+      <li>Parameter, "Crusoe secures $3.9B mega round", Sep 2026. <a href="https://parameter.io/crusoe-secures-3-9b-mega-round-to-scale-ai-infrastructure-and-modular-data-centers/">parameter.io</a></li>
+      <li>eWeek, "Meta Pumps Another $21B Into AI Cloud Powerhouse CoreWeave", Apr 2026. <a href="https://www.eweek.com/news/meta-coreweave-21b-ai-cloud-deal/">eweek.com</a></li>
+      <li>AI Weekly (citing Bloomberg), "Nvidia-Backed Lambda in Talks for $3B Pre-IPO Round at $12B+ Valuation", Aug 2026. <a href="https://aiweekly.co/alerts/nvidia-backed-lambda-in-talks-for-3b-pre-ipo-round-at-12b-valuation-as-2026">aiweekly.co</a></li>
+      <li>The Edge Malaysia (Bloomberg), Crusoe funding and Jane Street contract, Sep 2026. <a href="https://theedgemalaysia.com/node/816837">theedgemalaysia.com</a></li>
+      <li>Silicon Data, "H100 rental price over time", Dec 2025. <a href="https://www.silicondata.com/blog/h100-rental-price-over-time">silicondata.com</a></li>
+      <li>Silicon Data, "H200 vs H100 rental prices, May to July 2026", 2026. <a href="https://www.silicondata.com/blog/h200-vs-h100-rental-prices-may-july-2026">silicondata.com</a></li>
+      <li>Spheron, "Nebius GPU price hike 2026: H100 to B300 rates rise up to 21%", Sep 2026. <a href="https://www.spheron.network/blog/nebius-gpu-price-hike-2026-h100-to-b300-rates-rise-up-to-21/">spheron.network</a></li>
+    </ol>
+  </div>
+</main>
+<script>
+document.addEventListener("DOMContentLoaded", ()=>{
+  Kit.bars("#fig1 .c", [
+    {label:"Legacy enterprise rack", value:10, note:"Upper end of the 5 to 10 kW halls were built for"},
+    {label:"Air-cooling limit", value:40, note:"Above this, liquid cooling is required"},
+    {label:"GB200 NVL72 rack", value:123.6, note:"72 GPUs, incl. AC-to-DC losses"},
+    {label:"Nvidia 2027 target", value:1000, note:"1 MW IT racks on 800 VDC power"}
+  ], {suffix:" kW", sort:false, labelW:190});
+
+  Kit.tabs("#fig2", {
+    "Up-front capex": ()=>Kit.strip("#fig2 .c", [
+      {label:"Servers", value:21.19}, {label:"Facility", value:11.43},
+      {label:"Network", value:4.93}, {label:"Land and utility works", value:0.34}
+    ], {prefix:"$", suffix:"B", dp:2}),
+    "Annual cost": ()=>Kit.bars("#fig2 .c", [
+      {label:"Servers", value:5.02, note:"Depreciated over 5 years"},
+      {label:"Facility", value:1.39, note:"Depreciated over 14 years"},
+      {label:"Network", value:1.17},
+      {label:"Energy", value:0.59, note:"8.34 c/kWh, PUE 1.14, 71% utilization"},
+      {label:"Taxes, upkeep, labor, water", value:0.31},
+      {label:"Land and utility works", value:0.03}
+    ], {prefix:"$", suffix:"B", dp:2}),
+    "Estimates compared": ()=>Kit.bars("#fig2 .c", [
+      {label:"Bernstein", value:35},
+      {label:"Epoch AI", value:37.9},
+      {label:"Nvidia (midpoint)", value:55, note:"Stated as $50B to $60B"}
+    ], {prefix:"$", suffix:"B per GW"})
+  });
+
+  Kit.tabs("#fig3", {
+    "Share of world electricity use": ()=>Kit.strip("#fig3 .c", [
+      {label:"United States", value:45}, {label:"China", value:25},
+      {label:"Europe", value:15}, {label:"Rest of world", value:15}
+    ], {suffix:"%"}),
+    "North American markets, MW": ()=>Kit.bars("#fig3 .c", [
+      {label:"Northern Virginia", value:4496.5, note:"2,420 MW under construction"},
+      {label:"Atlanta", value:1803.2, note:"2,882 MW under construction"},
+      {label:"Dallas-Fort Worth", value:1432.8},
+      {label:"Phoenix", value:1069.2},
+      {label:"Chicago", value:910.6}
+    ], {suffix:" MW"})
+  });
+
+  Kit.line("#fig4 .c", [{name:"PJM RTO clearing price", points:[
+    ["2024/25", 28.92], ["2025/26", 269.92], ["2026/27", 329.17], ["2027/28", 333.44]
+  ]}], {prefix:"$", dp:2});
+
+  Kit.tabs("#fig5", {
+    "Annual, 2020 to 2028": ()=>Kit.line("#fig5 .c", [{name:"Hyperscaler capex", points:[
+      ["2020",97],["2021",131],["2022",159],["2023",154],["2024",241],["2025",416],["2026",777],["2027",1080],["2028",1190]
+    ]}], {prefix:"$", suffix:"B"}),
+    "Q2 2026 by company": ()=>Kit.bars("#fig5 .c", [
+      {label:"Amazon", value:54.77, note:"+65% year on year"},
+      {label:"Alphabet", value:44.9, note:"+100% year on year"},
+      {label:"Microsoft", value:41, note:"+69% year on year"},
+      {label:"Meta", value:31.08, note:"+83% year on year"}
+    ], {prefix:"$", suffix:"B"}),
+    "2026 guidance": ()=>Kit.bars("#fig5 .c", [
+      {label:"Amazon", value:220, note:"Raised from about $200B"},
+      {label:"Alphabet", value:200, note:"$195B to $205B"},
+      {label:"Microsoft", value:190, note:"April projection, unchanged in July"},
+      {label:"Meta", value:137.5, note:"$130B to $145B, midpoint shown"}
+    ], {prefix:"$", suffix:"B"})
+  });
+
+  Kit.bars("#fig6 .c", [
+    {label:"Crusoe", value:6, note:"1 GW online"},
+    {label:"Nebius (YE target)", value:5, note:"Target for end of 2026"},
+    {label:"CoreWeave", value:3.7, note:"1.5 GW active"}
+  ], {suffix:" GW"});
+
+  Kit.tabs("#fig7", {
+    "Major contracts": ()=>Kit.bars("#fig7 .c", [
+      {label:"CoreWeave · Meta", value:35, note:"$14.2B (2025) plus $21B through 2032 (2026)"},
+      {label:"CoreWeave · OpenAI", value:22.4, note:"Three agreements, 2025"},
+      {label:"Nebius · Microsoft", value:19.4, note:"$17.4B base, up to $19.4B, five years"},
+      {label:"Crusoe · Jane Street", value:13, note:"Reported by Bloomberg, Sep 2026"}
+    ], {prefix:"$", suffix:"B"}),
+    "CoreWeave Q2 2026 P&L": ()=>Kit.bars("#fig7 .c", [
+      {label:"Revenue", value:2575},
+      {label:"Cost of revenue", value:-879},
+      {label:"Depreciation, amort.", value:-1393},
+      {label:"Other operating costs", value:-352, note:"Derived"},
+      {label:"Net interest", value:-640},
+      {label:"Net loss", value:-626}
+    ], {prefix:"$", suffix:"M", sort:false})
+  });
+
+  Kit.tabs("#fig8", {
+    "H100 market, 2024 to 2025": ()=>Kit.line("#fig8 .c", [
+      {name:"Hyperscaler", points:[["H2 2024",9.34],["H1 2025",8.96],["Jun 2025",6.94],["H2 2025",6.26]]},
+      {name:"Neocloud", points:[["H2 2024",2.99],["H1 2025",3.5],["Jun 2025",3.29],["H2 2025",3.33]]},
+      {name:"Marketplace", points:[["H2 2024",2.58],["H1 2025",2.29],["Jun 2025",2.0],["H2 2025",1.95]]}
+    ], {prefix:"$", dp:2}),
+    "Nebius list prices, Oct 2026": ()=>Kit.bars("#fig8 .c", [
+      {label:"H100", value:4.5, note:"From $3.85, +17%"},
+      {label:"H200", value:5.4, note:"From $4.50, +20%"},
+      {label:"B200", value:8.5, note:"From $7.15, +19%"},
+      {label:"B300", value:9.5, note:"From $7.85, +21%"}
+    ], {prefix:"$", suffix:"/hr", dp:2, sort:false})
+  });
+});
+</script>
+</body>
+</html>

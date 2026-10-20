@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Semiconductor Market · Atabak Mehrabani</title>
+<meta name="description" content="Where the money sits in chips in 2026: segments, suppliers, buyers, factories, chokepoints, margins and valuations, from current public data.">
+<link rel="stylesheet" href="style.css">
+<script src="kit.js"></script>
+</head>
+<body>
+<div class="topbar"><div class="in"><a href="../research.html">← Atabak<span>.</span> Research</a><button class="theme">Dark</button></div></div>
+<main class="report">
+  <h1>The Semiconductor Market</h1>
+  <p class="dek">AI spending has roughly doubled chip sales in a year. Memory took most of the gain, a handful of suppliers control the bottlenecks, and the market prices the biggest earners as if the cycle will turn.</p>
+  <p class="mono byline">Atabak Mehrabani · October 2026 · 9 min read</p>
+
+  <div class="stats">
+    <div><b>$796B</b><span>World chip sales, 2025 [1]</span></div>
+    <div><b>$1.66T</b><span>2026 estimate after Q2 actuals [2]</span></div>
+    <div><b>53%</b><span>Memory share of 2026 sales forecast, up from 29% [1]</span></div>
+    <div><b>72.5%</b><span>TSMC share of foundry revenue, Q2 2026 [7]</span></div>
+  </div>
+
+  <section>
+    <span class="mono num">01</span>
+    <h2>Memory drove the doubling</h2>
+    <p>WSTS put 2025 chip sales at <strong>$795.6B</strong> and in June forecast <strong>$1.51T for 2026</strong>, up 90% [1]. After first-half sales of $702B, it raised the 2026 figure to about $1,655B [2]. Most of the increase is memory, forecast to grow about 250% to $804B as AI servers take high-bandwidth memory (HBM) and push up prices for all DRAM [1]. Analog, discretes and sensors grow in the single or low double digits.</p>
+    <div class="figure">
+      <div class="head">World semiconductor sales by product segment</div>
+      <div id="fig1"><div class="c"></div></div>
+      <p class="note">Source: WSTS Spring 2026 forecast [1]. Notice that memory is larger than logic in 2026 after being smaller in 2025. "All other" is analog, microprocessors, discretes, optoelectronics and sensors.</p>
+    </div>
+  </section>
+
+  <section>
+    <span class="mono num">02</span>
+    <h2>The supplier layers</h2>
+    <p>Chipmakers bought <strong>$135.1B</strong> of manufacturing equipment in 2025 [5] and $73.2B of materials, of which $45.8B went into wafer fabs and $27.4B into packaging [6]. SEMI's July forecast has equipment rising 23% to <strong>$165.9B in 2026</strong>, with wafer fab equipment at $143.9B, test at $15.3B and assembly and packaging at $6.7B [4]. Design software is small by comparison: Cadence, one of the three main EDA vendors, guides to $6.26B to $6.34B of 2026 revenue [27].</p>
+    <div class="figure">
+      <div class="head">Spending on the layers that feed chip production ($B)</div>
+      <div id="fig2"><div class="c"></div></div>
+      <p class="note">Sources: WSTS [1], SEMI [4][5][6]. Supplier spending is a cost inside chip sales, so the bars should not be added together.</p>
+    </div>
+  </section>
+
+  <section>
+    <span class="mono num">03</span>
+    <h2>One foundry makes most of the money</h2>
+    <p>The ten largest contract chipmakers earned a record <strong>$53.49B</strong> in Q2 2026, and TSMC took 72.5% of it [7]. Samsung (5.9%) and SMIC (5.4%) are a distant second and third. In Q3, TSMC's revenue reached $46.72B, and 79% of wafer revenue came from 7nm and newer processes, including 8% from 2nm in its first full quarter of volume [8][9].</p>
+    <div class="figure">
+      <div class="head">Top 10 foundries, Q2 2026</div>
+      <div id="fig3"><div class="c"></div></div>
+      <p class="note">Source: TrendForce [7]. TrendForce published shares only for the top five; "Others" in the share view is the remainder of the top-10 total.</p>
+    </div>
+  </section>
+
+  <section>
+    <span class="mono num">04</span>
+    <h2>Memory: three suppliers and a price spike</h2>
+    <p>HBM is supplied by three firms: SK hynix held 50% of revenue in Q2 2026, Samsung 33% and Micron 18% [10]. Micron's quarter to early September brought in <strong>$54.23B</strong>, nearly five times the $11.32B of a year earlier, at an 86.8% gross margin [11]. SK hynix posted a 76% operating margin in Q2 [12]. TrendForce still expects conventional DRAM contract prices to rise 10% to 15% in Q4 2026, a slower increase than in Q3 [13].</p>
+    <div class="figure">
+      <div class="head">Revenue share, Q2 2026</div>
+      <div id="fig4"><div class="c"></div></div>
+      <p class="note">Source: Counterpoint Research [10]. Shares may not sum to 100% due to rounding. CXMT, China's DRAM maker, now holds 10% of DRAM but has no HBM share.</p>
+    </div>
+  </section>
+
+  <section>
+    <span class="mono num">05</span>
+    <h2>Who buys: data centers first</h2>
+    <p>Amazon, Alphabet, Meta and Microsoft now plan roughly <strong>$730B</strong> of 2026 capital spending between them, and Amazon said higher memory prices were the main reason it raised its plan to about $220B [15][16][17][18]. That money lands at Nvidia, whose data center unit earned $89.0B of its $96.2B quarterly revenue [14]. Gartner estimates AI processors passed $200B of sales in 2025 [3].</p>
+    <div class="figure">
+      <div class="head">2026 capital spending plans, four largest US cloud companies ($B)</div>
+      <div id="fig5"><div class="c"></div></div>
+      <p class="note">Sources: company guidance as reported after Q2 2026 results [15][16][17][18]. Alphabet and Meta are midpoints of guided ranges. Microsoft's figure is calendar 2026 and fell from about $190B only because of a lease accounting change.</p>
+    </div>
+    <p>TSMC's revenue mix shows the same shift from the factory side. High-performance computing, mostly AI accelerators and server CPUs, rose from 57% of revenue to 68% in a year, while smartphones fell from 30% to 21% [8]. Customers based in North America account for 79% of its revenue [8].</p>
+    <div class="figure">
+      <div class="head">TSMC revenue by end platform (% of net revenue)</div>
+      <div id="fig6"><div class="c"></div></div>
+      <p class="note">Source: TSMC 3Q26 management report [8]. Autos and IoT each stay near 4% to 5%, which makes them small for TSMC even though they are large for analog suppliers.</p>
+    </div>
+  </section>
+
+  <section>
+    <span class="mono num">06</span>
+    <h2>Where chips are made</h2>
+    <p>China, Taiwan and Korea bought 79% of all chipmaking equipment in 2025 [5]. China stayed the largest buyer at $49.3B, while Taiwan's spending rose 90% to $31.5B on AI capacity [5]. SIA and BCG estimate that the US share of fab capacity rises from 10% in 2022 to 14% by 2032 as subsidised fabs open, but East Asia still holds most of it [19]. Taiwan was the largest buyer of materials in 2025, at $21.7B [6].</p>
+    <div class="figure">
+      <div class="head">Chipmaking geography</div>
+      <div id="fig7"><div class="c"></div></div>
+      <p class="note">Sources: SEMI equipment billings [5]; SIA and BCG capacity estimates, 200mm and larger wafers in 300mm equivalents [19]. The 2032 view is a forecast published in 2024.</p>
+    </div>
+  </section>
+
+  <section>
+    <span class="mono num">07</span>
+    <h2>Chokepoints</h2>
+    <p>SIA and BCG count more than 50 steps in the chain where one region holds over 65% of the market [19]. The table lists the ones that matter most for leading-edge chips. In each case, losing one supplier or one region would stop production for most of the industry.</p>
+    <div class="tablewrap">
+      <table class="t">
+        <tr><th>Step</th><th>Concentration</th><th>Source</th></tr>
+        <tr><td>EUV lithography tools</td><td>ASML is the only maker; tools cost about $300M each</td><td>[20]</td></tr>
+        <tr><td>Leading-edge logic (under 10nm)</td><td>Taiwan about 69% and Korea about 31% of capacity in 2022</td><td>[19]</td></tr>
+        <tr><td>Contract manufacturing</td><td>TSMC 72.5% of top-10 foundry revenue, Q2 2026</td><td>[7]</td></tr>
+        <tr><td>HBM</td><td>Three suppliers; SK hynix 50%</td><td>[10]</td></tr>
+        <tr><td>Photoresist</td><td>Japan over 70% of the market, higher for EUV resist (reported)</td><td>[21]</td></tr>
+        <tr><td>Gallium (power and RF chips)</td><td>China 99% of primary low-purity output</td><td>[22]</td></tr>
+        <tr><td>EDA software</td><td>Three vendors about 75% (estimate)</td><td>[23]</td></tr>
+      </table>
+    </div>
+    <div class="callout">ASML management has said its planned 30% capacity increases for 2027 and 2028 will not be enough to meet demand [24]. Because EUV tools set the pace for new leading-edge fabs, this caps how fast foundry capacity can grow regardless of how much the buyers spend.</div>
+  </section>
+
+  <section>
+    <span class="mono num">08</span>
+    <h2>Margins by layer</h2>
+    <p>Profit follows scarcity. Memory makers and Nvidia earn the highest margins right now, TSMC is close behind, and packaging is the lowest-margin layer: ASE's assembly and test unit made a 27.3% gross margin [28]. Analog is steadier: Texas Instruments earned 61% gross and 42% operating margins in Q2 with revenue up 23% [26]. Memory margins swing the most: Micron's gross margin was 38% in its fiscal Q3 2025 [29].</p>
+    <div class="figure">
+      <div class="head">Margin by company, latest reported quarter (%)</div>
+      <div id="fig8"><div class="c"></div></div>
+      <p class="note">Sources: [8][11][12][14][25][26][27][28]. Quarters differ by fiscal calendar (Q2 to Q3 2026). Cadence is GAAP; its non-GAAP operating margin was 45.5%. ASML does not report operating income in its quarterly release, so it appears only under gross margin.</p>
+    </div>
+  </section>
+
+  <section>
+    <span class="mono num">09</span>
+    <h2>Valuation versus growth</h2>
+    <p>The fastest-growing chip companies trade at or below the market multiple. In early October, Micron traded at about <strong>6 times</strong> forward earnings and Nvidia at 19.9 times, against 20.3 for the S&amp;P 500 [29]. Investors are pricing peak earnings that they expect to fall when new memory and AI capacity arrives. The broader chip ETF traded at 22.8 times forward earnings in July, slightly above the S&amp;P 500 [30].</p>
+    <div class="figure">
+      <div class="head">Chip stocks, early October 2026</div>
+      <div id="fig9"><div class="c"></div></div>
+      <p class="note">Sources: Benzinga using TradingView and Koyfin data, 7 October 2026 [29]; SOXX figure from LSEG via MarketWatch, July 2026 [30].</p>
+    </div>
+    <div class="tablewrap">
+      <table class="t">
+        <tr><th>Company</th><th>Forward P/E</th><th>Latest quarterly revenue growth, year on year</th></tr>
+        <tr><td>Micron</td><td>6.0</td><td>+379% (FQ4 2026) [11]</td></tr>
+        <tr><td>Nvidia</td><td>19.9</td><td>+106% (Q2 FY2027) [14]</td></tr>
+        <tr><td>S&amp;P 500</td><td>20.3</td><td>n/a</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <div class="sources">
+    <span class="mono">Sources</span>
+    <ol>
+      <li>WSTS, "Global Semiconductor Market Surges Beyond USD 1.5 Trillion in 2026" (Spring forecast), 2 Jun 2026. <a href="https://www.wsts.org/esraCMS/extension/media/f/WST/7618/WSTS_FC-Release-2026-May.pdf">wsts.org</a></li>
+      <li>WSTS, "Global Semiconductor Market records exceptional growth in Q2 2026", Aug 2026. <a href="https://www.wsts.org/esraCMS/extension/media/f/WST/7745/WSTS-Q2-Release-2026-08-06.pdf">wsts.org</a></li>
+      <li>Gartner, "Worldwide Semiconductor Revenue Grew 21% in 2025", 12 Jan 2026. <a href="https://www.gartner.com/en/newsroom/press-releases/2026-01-12-gartner-says-worldwide-semiconductor-revenue-grew-21-percent-in-2025">gartner.com</a></li>
+      <li>SEMI, "Global Semiconductor Equipment Sales Forecast to Reach a Record $229 Billion in 2028", 14 Jul 2026. <a href="https://www.semi.org/en/semi-press-release/global-semiconductor-equipment-sales-forecast-to-reach-a-record-229-billion-dollars-in-2028-semi-reports">semi.org</a></li>
+      <li>SEMI, "Global Semiconductor Equipment Billings Reached $135 Billion in 2025", Apr 2026. <a href="https://www.semi.org/en/SEMI-Reports-Global-Semiconductor-Equipment-Billings-Reached-135-Billion-in-2025">semi.org</a></li>
+      <li>SEMI, "Global Semiconductor Materials Market Revenue Reaches Record $73.2 Billion in 2025", 12 May 2026. <a href="https://www.semi.org/en/semi-press-release/global-semiconductor-materials-market-revenue-reaches-record-73.2-billion-dollars-in-2025-semi-reports">semi.org</a></li>
+      <li>TrendForce, top 10 foundries 2Q26, 9 Sep 2026. <a href="https://www.trendforce.com/presscenter/news/20260909-13225.html">trendforce.com</a></li>
+      <li>TSMC, 3Q26 Management Report, 15 Oct 2026. <a href="https://investor.tsmc.com/english/encrypt/files/encrypt_file/qr/phase4_reports/2026-10/f53a64fd40fc0b453f94e077e5aba8cad506f27b/3Q26%20ManagementReport.pdf">investor.tsmc.com</a></li>
+      <li>TSMC, "TSMC Reports Third Quarter EPS of NT$29.43", 15 Oct 2026. <a href="https://www.sec.gov/Archives/edgar/data/0001046179/000104617926000726/a3q26e_withguidancexfinal.htm">sec.gov</a></li>
+      <li>Counterpoint Research, "Global DRAM and HBM Market Share: Quarterly", Q2 2026 data. <a href="https://counterpointresearch.com/insights/global-dram-and-hbm-market-share">counterpointresearch.com</a></li>
+      <li>Micron, fiscal Q4 2026 results (Form 8-K), Sep 2026. <a href="https://www.sec.gov/Archives/edgar/data/0000723125/000072312526000018/a2026q4ex991-pressrelease.htm">sec.gov</a></li>
+      <li>Pulse 2.0, "SK Hynix Reports Record Q2 2026 Revenue Of 79.3 Trillion Won", Jul 2026. <a href="https://pulse2.com/sk-hynix-reports-record-q2-2026-revenue-of-79-3-trillion-won-about-55-2-billion/">pulse2.com</a></li>
+      <li>TechNews, report of TrendForce 4Q26 memory contract price forecast, 30 Sep 2026. <a href="https://technews.tw/?p=1622115">technews.tw</a></li>
+      <li>Nvidia, "Financial Results for Second Quarter Fiscal 2027" (Form 8-K), 26 Aug 2026. <a href="https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000073/q2fy27pr.htm">sec.gov</a></li>
+      <li>TIKR, "Amazon Raised Its 2026 Capex Guide to $220 Billion", Jul 2026. <a href="https://www.tikr.com/blog/amazon-raised-its-2026-capex-guide-to-220-billion-heres-what-drove-the-increase">tikr.com</a></li>
+      <li>S&amp;P Global Market Intelligence, "Alphabet post-Q2: AI growth accelerates as spending weighs on cash flow", Jul 2026. <a href="https://www.spglobal.com/market-intelligence/en/news-insights/research/2026/07/alphabet-postq-ai-growth-accelerates-as-spending-weighs-on-cash-flow">spglobal.com</a></li>
+      <li>Meta, "Meta Reports Second Quarter 2026 Results", 29 Jul 2026. <a href="https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/">investor.atmeta.com</a></li>
+      <li>CFO Dive, "Microsoft holds line on AI spending plans", Jul 2026. <a href="https://www.cfodive.com/news/microsoft-holds-line-ai-spending-plans/826648/">cfodive.com</a></li>
+      <li>SIA and BCG, "Emerging Resilience in the Semiconductor Supply Chain", May 2024. <a href="https://www.semiconductors.org/wp-content/uploads/2024/05/Report_Emerging-Resilience-in-the-Semiconductor-Supply-Chain.pdf">semiconductors.org</a></li>
+      <li>RTÉ, "ASML lifts 2026 forecast", 15 Apr 2026. <a href="https://rte.ie/news/business/2026/0415/1568288-asml-lifts-2026-forecast/">rte.ie</a></li>
+      <li>TrendForce News, "Japan Rumored to Curb Photoresist Exports as China Targets 40% Self-Sufficiency by 2026", 3 Dec 2025. <a href="https://www.trendforce.com/news/2025/12/03/news-japan-rumored-to-curb-photoresist-exports-as-china-targets-40-self-sufficiency-by-2026/">trendforce.com</a></li>
+      <li>USGS, Mineral Commodity Summaries 2026: Gallium. <a href="https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-gallium.pdf">pubs.usgs.gov</a></li>
+      <li>SemiconductorX, "EDA Tools" (market share estimate, undated). <a href="https://semiconductorx.com/semiconductor-eda.html">semiconductorx.com</a></li>
+      <li>Hargreaves Lansdown, "ASML Q3 results: record quarter, capacity the constraint", Oct 2026. <a href="https://www.hl.co.uk/shares/share-research/asml-q3-results-record-quarter-capacity-the-constraint">hl.co.uk</a></li>
+      <li>ASML, Q3 2026 financial results (Form 6-K), Oct 2026. <a href="https://www.sec.gov/Archives/edgar/data/0000937966/000162828026065813/pressreleasefinancialresul.htm">sec.gov</a></li>
+      <li>Texas Instruments, "TI reports second quarter 2026 financial results", 22 Jul 2026. <a href="https://seekingalpha.com/pr/20592040">seekingalpha.com</a></li>
+      <li>Cadence, Q2 2026 financial results (Form 8-K), 27 Jul 2026. <a href="https://www.sec.gov/Archives/edgar/data/0000813672/000081367226000089/cdns07272026ex9901.htm">sec.gov</a></li>
+      <li>Nasdaq, "ASE Technology Q2 Earnings Call Highlights", Jul 2026. <a href="https://www.nasdaq.com/articles/ase-technology-q2-earnings-call-highlights">nasdaq.com</a></li>
+      <li>Benzinga via Webull, "Most Undervalued Chip Stocks In October 2026", 7 Oct 2026. <a href="https://www.webull.com/news/15707031534519297">webull.com</a></li>
+      <li>MarketWatch via Morningstar, "19 (mostly) tech stocks that have fallen at least 25% in July", 17 Jul 2026. <a href="https://www.morningstar.com/news/marketwatch/20260717473/19-mostly-tech-stocks-that-have-fallen-at-least-25-in-july">morningstar.com</a></li>
+    </ol>
+  </div>
+</main>
+<script>
+document.addEventListener("DOMContentLoaded", ()=>{
+  const B = {prefix:"$", suffix:"B"}, P = {suffix:"%"};
+
+  Kit.tabs("#fig1", {
+    "2026 by segment": ()=>Kit.bars("#fig1 .c", [
+      {label:"Memory", value:803.9}, {label:"Logic", value:411.4}, {label:"Microprocessors", value:101.7},
+      {label:"Analog", value:95.4}, {label:"Optoelectronics", value:44.2}, {label:"Discretes", value:33.2},
+      {label:"Sensors", value:21.5}], B),
+    "2026 growth": ()=>Kit.bars("#fig1 .c", [
+      {label:"Memory", value:249.5}, {label:"Logic", value:37.3}, {label:"Microprocessors", value:19.8},
+      {label:"Analog", value:10.2}, {label:"Discretes", value:8.0}, {label:"Sensors", value:3.0},
+      {label:"Optoelectronics", value:2.7}], P),
+    "2025 to 2027": ()=>Kit.line("#fig1 .c", [
+      {name:"Memory", points:[["2025",230.0],["2026F",803.9],["2027F",1062.1]]},
+      {name:"Logic", points:[["2025",299.5],["2026F",411.4],["2027F",522.8]]},
+      {name:"All other", points:[["2025",266.1],["2026F",295.9],["2027F",328.8]]}], B),
+  });
+
+  Kit.tabs("#fig2", {
+    "2025 layers": ()=>Kit.bars("#fig2 .c", [
+      {label:"Chip sales", value:795.6, note:"WSTS"},
+      {label:"Equipment", value:135.1, note:"SEMI billings, +15% y/y"},
+      {label:"Wafer fab materials", value:45.8, note:"+5.4% y/y"},
+      {label:"Packaging materials", value:27.4, note:"+9.3% y/y"}], B),
+    "Equipment 2026F": ()=>Kit.bars("#fig2 .c", [
+      {label:"Wafer fab equipment", value:143.9, note:"+23.1% y/y"},
+      {label:"Test", value:15.3, note:"+31.0% y/y"},
+      {label:"Assembly & packaging", value:6.7, note:"+9.6% y/y"}], B),
+  });
+
+  Kit.tabs("#fig3", {
+    "Revenue ($B)": ()=>Kit.bars("#fig3 .c", [
+      {label:"TSMC", value:40.2}, {label:"Samsung", value:3.26}, {label:"SMIC", value:3.0},
+      {label:"UMC", value:2.18}, {label:"GlobalFoundries", value:1.79}, {label:"HuaHong", value:1.27},
+      {label:"Tower", value:0.46}, {label:"VIS", value:0.451}, {label:"Nexchip", value:0.447},
+      {label:"PSMC", value:0.432}], {prefix:"$", suffix:"B", dp:2}),
+    "Share of top 10": ()=>Kit.strip("#fig3 .c", [
+      {label:"TSMC", value:72.5}, {label:"Samsung", value:5.9}, {label:"SMIC", value:5.4},
+      {label:"UMC", value:3.9}, {label:"GlobalFoundries", value:3.2}, {label:"Ranks 6 to 10", value:9.1}], P),
+  });
+
+  Kit.tabs("#fig4", {
+    "HBM": ()=>Kit.strip("#fig4 .c", [
+      {label:"SK hynix", value:50}, {label:"Samsung", value:33}, {label:"Micron", value:18}], P),
+    "All DRAM": ()=>Kit.strip("#fig4 .c", [
+      {label:"Samsung", value:38}, {label:"SK hynix", value:25}, {label:"Micron", value:24},
+      {label:"CXMT", value:10}, {label:"Nanya", value:2}, {label:"Others", value:1}], P),
+  });
+
+  Kit.bars("#fig5", [
+    {label:"Amazon", value:220, note:"About $220B, cash capex"},
+    {label:"Alphabet", value:200, note:"Range $195B to $205B"},
+    {label:"Microsoft", value:175, note:"Calendar 2026, after lease change"},
+    {label:"Meta", value:137.5, note:"Range $130B to $145B"}], B);
+
+  Kit.tabs("#fig6", {
+    "Platform mix": ()=>Kit.line("#fig6 .c", [
+      {name:"HPC", points:[["3Q25",57],["2Q26",66],["3Q26",68]]},
+      {name:"Smartphone", points:[["3Q25",30],["2Q26",22],["3Q26",21]]},
+      {name:"IoT", points:[["3Q25",5],["2Q26",5],["3Q26",4]]},
+      {name:"Automotive", points:[["3Q25",5],["2Q26",4],["3Q26",4]]}], P),
+    "Customer location, 3Q26": ()=>Kit.strip("#fig6 .c", [
+      {label:"North America", value:79}, {label:"Asia Pacific", value:10}, {label:"China", value:5},
+      {label:"Japan", value:3}, {label:"EMEA", value:3}], P),
+  });
+
+  Kit.tabs("#fig7", {
+    "Equipment spend 2025": ()=>Kit.bars("#fig7 .c", [
+      {label:"China", value:49.3, note:"-0.5% y/y"}, {label:"Taiwan", value:31.5, note:"+90% y/y"},
+      {label:"Korea", value:25.8, note:"+26% y/y"}, {label:"North America", value:10.9, note:"-20% y/y"},
+      {label:"Japan", value:9.5, note:"+22% y/y"}, {label:"Rest of world", value:5.2, note:"+25% y/y"},
+      {label:"Europe", value:2.9, note:"-41% y/y"}], B),
+    "Fab capacity 2022": ()=>Kit.strip("#fig7 .c", [
+      {label:"China", value:24}, {label:"Taiwan", value:18}, {label:"Korea", value:17}, {label:"Japan", value:17},
+      {label:"US", value:10}, {label:"Europe", value:8}, {label:"Other", value:7}], P),
+    "Fab capacity 2032F": ()=>Kit.strip("#fig7 .c", [
+      {label:"China", value:21}, {label:"Korea", value:19}, {label:"Taiwan", value:17}, {label:"Japan", value:15},
+      {label:"US", value:14}, {label:"Europe", value:8}, {label:"Other", value:5}], P),
+  });
+
+  Kit.tabs("#fig8", {
+    "Gross margin": ()=>Kit.bars("#fig8 .c", [
+      {label:"Micron (memory)", value:86.8, note:"FQ4 2026"}, {label:"Nvidia (design)", value:75.0, note:"Q2 FY2027"},
+      {label:"TSMC (foundry)", value:66.4, note:"3Q26"}, {label:"TI (analog)", value:61, note:"Q2 2026"},
+      {label:"ASML (equipment)", value:57.5, note:"Q3 2026"}, {label:"ASE ATM (packaging)", value:27.3, note:"Q2 2026"}], P),
+    "Operating margin": ()=>Kit.bars("#fig8 .c", [
+      {label:"Micron (memory)", value:80.7, note:"FQ4 2026, GAAP"}, {label:"SK hynix (memory)", value:76.3, note:"Q2 2026"},
+      {label:"Nvidia (design)", value:66.3, note:"Q2 FY2027, GAAP"}, {label:"TSMC (foundry)", value:58.7, note:"3Q26"},
+      {label:"TI (analog)", value:42.3, note:"Q2 2026"}, {label:"Cadence (EDA)", value:28.4, note:"Q2 2026, GAAP"},
+      {label:"ASE ATM (packaging)", value:15.7, note:"Q2 2026"}], P),
+  });
+
+  Kit.tabs("#fig9", {
+    "Forward P/E": ()=>Kit.bars("#fig9 .c", [
+      {label:"Micron", value:6.01}, {label:"NXP", value:14.62}, {label:"Qualcomm", value:19.58},
+      {label:"Nvidia", value:19.93}, {label:"S&P 500", value:20.3, color:"var(--muted)"},
+      {label:"Microchip", value:20.61}, {label:"SOXX ETF (Jul)", value:22.8}], {suffix:"x", sort:false}),
+    "1-year share price change": ()=>Kit.bars("#fig9 .c", [
+      {label:"Micron", value:460.6}, {label:"Nvidia", value:27.7}, {label:"Microchip", value:23.1},
+      {label:"Qualcomm", value:6.1}, {label:"NXP", value:4.6}], P),
+  });
+});
+</script>
+</body>
+</html>
